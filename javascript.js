@@ -9,12 +9,22 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database()
-
+var query;
 // I would recommend we put our API calls in a unique function and then run those functions on the jquery "click"/submit event. If that makes sense...
 
+$("#search-button").on("click", function(event)  {
+  event.preventDefault();
+  query = $("#search-input").val().trim().toLowerCase();
+  console.log(query);
 
-$("#search-button").on("submit", function(event) {
-  event.preventDefault()
-  var query = $("#search-input").text()
-  console.log(query)
+  database.ref().push({
+    query: query,
+  })
+  
+})
+
+database.ref().on("child_added", function(snapshot) {
+  $("#search-list").prepend("<a>" + "<li>" + snapshot.val().query + "</li>" + "</a>")
+}, function(errorObject){
+  console.log(errorObject.code)
 })
