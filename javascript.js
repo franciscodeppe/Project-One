@@ -20,7 +20,7 @@ $("#search-button").on("click", function(event)  {
   database.ref().push({
     query: query,
   })
-  
+
 })
 
 database.ref().on("child_added", function(snapshot) {
@@ -28,3 +28,7 @@ database.ref().on("child_added", function(snapshot) {
 }, function(errorObject){
   console.log(errorObject.code)
 })
+
+function glassdoor() {
+
+}
