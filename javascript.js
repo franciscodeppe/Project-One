@@ -21,7 +21,7 @@ $("#search-button").on("click", function(event)  {
   from = $("#from-input").val().trim().toLowerCase();
   seats = $("#seat-number").val().trim().toLowerCase();
   to = $("#to-input").val().trim().toLowerCase();
-  
+
   console.log(query);
 
   database.ref().push({
