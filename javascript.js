@@ -29,21 +29,7 @@ $("#search-button").on("click", function(event) {
   obj['to'] = $("#to-input").val().trim().toLowerCase();
 
   searches.push(obj);
-
-
   localStorage.setItem('recent searches', JSON.stringify(searches));
-
-  console.log(localStorage.getItem('departing from'));
-  console.log(localStorage.getItem('number of seats'));
-  console.log(localStorage.getItem('destination'));
-
-    localStorage.setItem('departing from', from);
-    localStorage.setItem('number of seats', seats);
-    localStorage.setItem('destination', to);
-
-    console.log(localStorage.getItem('desparting from'));
-    console.log(localStorage.getItem('number of seats'));
-    console.log(localStorage.getItem('destination'));
 
 
 
