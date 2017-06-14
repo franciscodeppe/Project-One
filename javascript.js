@@ -13,7 +13,8 @@ var from;
 var seats;
 var to;
 
-
+var searches = [];
+var obj = {};
 // I would recommend we put our API calls in a unique function and then run those functions on the jquery "click"/submit event. If that makes sense...
 
 $("#search-button").on("click", function(event)  {
@@ -22,12 +23,16 @@ $("#search-button").on("click", function(event)  {
   seats = $("#seat-number").val().trim();
   to = $("#to-input").val().trim().toLowerCase();
 
+  obj['from'] = $("#from-input").val().trim().toLowerCase();
+  obj['seats'] = $("#seat-number").val().trim();
+  obj['to'] = $("#to-input").val().trim().toLowerCase();
 
-  localStorage.setItem('departing from', from);
-  localStorage.setItem('number of seats', seats);
-  localStorage.setItem('destination', to);
+  searches.push(obj);
 
-  console.log(localStorage.getItem('desparting from'));
+
+  localStorage.setItem('recent searches', JSON.stringify(searches));
+
+  console.log(localStorage.getItem('departing from'));
   console.log(localStorage.getItem('number of seats'));
   console.log(localStorage.getItem('destination'));
 
