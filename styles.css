@@ -13,6 +13,9 @@ body {
 #seat-number {
 	width: 45px;
 }
+#date {
+	width: 150px;
+}
 
 .form-control {
 	text-align: center;
@@ -22,6 +25,15 @@ body {
 .jumbotron {
 	background-image: url()
 }
+
+.from {
+	padding-left: 10px;
+}
+
+.to {
+	padding-right: 10px;
+}
+
 
 
 
