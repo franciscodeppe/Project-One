@@ -23,7 +23,6 @@ $("#search-button").on("click", function(event)  {
   to = $("#to-input").val().trim().toLowerCase();
 
 
-
   localStorage.setItem('departing from', from);
   localStorage.setItem('number of seats', seats);
   localStorage.setItem('destination', to);
