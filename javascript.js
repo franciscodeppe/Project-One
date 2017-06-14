@@ -22,11 +22,7 @@ $("#search-button").on("click", function(event)  {
   seats = $("#seat-number").val().trim();
   to = $("#to-input").val().trim().toLowerCase();
 
-  console.log(query);
 
-  database.ref().push({
-    query: query,
-  });
 
   localStorage.setItem('departing from', from);
   localStorage.setItem('number of seats', seats);
