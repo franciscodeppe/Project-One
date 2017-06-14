@@ -19,14 +19,23 @@ var to;
 $("#search-button").on("click", function(event)  {
   event.preventDefault();
   from = $("#from-input").val().trim().toLowerCase();
-  seats = $("#seat-number").val().trim().toLowerCase();
+  seats = $("#seat-number").val().trim();
   to = $("#to-input").val().trim().toLowerCase();
 
   console.log(query);
 
   database.ref().push({
     query: query,
-  })
+  });
+
+  localStorage.setItem('departing from', from);
+  localStorage.setItem('number of seats', seats);
+  localStorage.setItem('destination', to);
+
+  console.log(localStorage.getItem('desparting from'));
+  console.log(localStorage.getItem('number of seats'));
+  console.log(localStorage.getItem('destination'));
+
 
 })
 
