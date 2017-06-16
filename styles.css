@@ -60,12 +60,12 @@ body, h1 {
 .dropdown-menu li a {
 	color: #9d9d9d;
 }
-.nav-1 {
-	padding-left: 40px;
-}
-.nav-2 {
 
-}
 .dropdown-li {
 	text-align: center;
+}
+.flexbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
