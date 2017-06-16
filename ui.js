@@ -38,13 +38,14 @@ $("#bfSlider").on("slide", function(slideEvt) {
 
 $("#bfSliderVal").text($("#bfCurrentSliderValLabel").attr("data-slider-value"))
 
+$("#twSlider").slider();
+$("#twSlider").on("slide", function(slideEvt) {
+    $("#twSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
 
-$(document).ready(function() {
-	var img = url(theLatest.png)
-	$(img).addClass({"webkitFilter": grayscale(100%),
-	"filter": grayscale(100%);})
-	$(body).css({"background-image": img})
-})
+$("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
+
 // point to "#main"div on index.html
 //
 // $(yes/no switch)on("change" function() {

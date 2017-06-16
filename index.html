@@ -10,53 +10,74 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
+	<link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<div class="img-holder">
-	<img class='img-rounded logo' src="theLatest.png" alt="">
-</div>
+	<div class="img-holder">
+		<img class='img-rounded logo' src="theLatest.png" alt="">
+	</div>
 	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header"></div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<a href="#" id="header"><h1 class="nav navbar-nav">The Latest</h1></a>
+				<p style="font-family: 'Special Elite', cursive;">Click</p><a href="#" id="header"><h1 class="nav navbar-nav">The Latest</h1></a><p style="font-family: 'Special Elite', cursive;">  to open and close your options</p>
+
 			</div>
 		</div>
 	</nav>
 	<div id="wrapper">
 		<div id="mySidenav" class="sidenav">
-			<div class="container">
-				<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
-				<div id="nytoptions" class="collapse">
-					<div class="container">
-						<div class="row">
-							<div class="container switch">
-								<input type="checkbox" checked data-toggle="toggle">
-							</div>
+			<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
+			<div id="nytoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input type="checkbox" data-toggle="toggle">
 						</div>
-						<div class="row">
-							<div class="container number">
-								<span class="sliders " id="nytCurrentSliderValLabel">Feed Size<span id="nytSliderVal"></span></span><br>
-								<input id="nytSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-							</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="nytSliderVal"></span></span><br>
+							<input id="nytSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
-				<a><h2 data-toggle="collapse" data-target="#bfoptions">BuzzFeed</h2></a>
-				<div id="bfoptions" class="collapse">
-					<div class="container">
-						<div class="row">
-							<div class="container switch">
-								<input type="checkbox" checked data-toggle="toggle">
-							</div>
+			</div>
+			<a><h2 data-toggle="collapse" data-target="#bfoptions">Buzzfeed</h2></a>
+			<div id="bfoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input type="checkbox" data-toggle="toggle">
 						</div>
-						<div class="row">
-							<div class="container number">
-								<span class="sliders " id="bfCurrentSliderValLabel">Feed Size<span id="bfSliderVal"></span></span><br>
-								<input id="bfSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-							</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="bfCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="bfSliderVal"></span></span><br>
+							<input id="bfSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a><h2 data-toggle="collapse" data-target="#twoptions">Twitter</h2></a>
+			<div id="twoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input type="checkbox" data-toggle="toggle">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="twCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="twSliderVal"></span></span><br>
+							<input id="twSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
