@@ -1,95 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header"></div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<a id="logo"><img alt=""><h1 class="nav navbar-nav">The Latest</h1></a>
+			</div>
+		</div>
+	</nav>
+	<div id="mySidenav" class="sidenav">
+		<div class="container">
+			<a><h2 class="" data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
+			<div id="nytoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container">
+							<input type="checkbox" checked data-toggle="toggle">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container">
+							<span class="sliders" id="nyCurrentSliderValLabel">Feed Size<span id="nySliderVal"></span></span><br>
+							<input id="nySlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="main" class="">
+	</div>
+
+</body>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- MOMENT CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-</head>
-<body>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 jumbotron">
-      <h1>News Headlines...</h1>
-        <p>Your one stop customizable shop!</p>
-    </div>
-  </div>
-  <div class="row">
-    <div id="newsDiv1" class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center"></div>
-      <div class="panel-body">
-      <form class="text-center">
-        <select id="newsSelect1" onchange="pickNews(this.value, 1)" name="news1">
-          <option>Make a selection...</option>
-          <option value="assocpress">Associated Press</option>
-          <option value="bbc">BBC</option>
-          <option value="theguardian">The Guardian</option>
-          <option value="nytimes">New York Times</option>
-        </select>
-      </form>
-      <br>
-      </div>
-      <div class="panel-footer"></div>
-      </div>
-    </div>
-    <div id="newsDiv2" class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center"></div>
-      <div class="panel-body">
-      <form class="text-center">
-        <select id="newsSelect2" onchange="pickNews(this.value, 2)" name="news2">
-          <option>Make a selection...</option>
-          <option value="assocpress">Associated Press</option>
-          <option value="bbc">BBC</option>
-          <option value="theguardian">The Guardian</option>
-          <option value="nytimes">New York Times</option>
-        </select>
-      </form>
-      <br>
-      </div>
-      <div class="panel-footer"></div>
-      </div>
-    </div>
-    <div id="newsDiv3" class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center"></div>
-      <div class="panel-body">
-      <form class="text-center">
-        <select id="newsSelect3" onchange="pickNews(this.value, 3)" name="news3">
-          <option>Make a selection...</option>
-          <option value="assocpress">Associated Press</option>
-          <option value="bbc">BBC</option>
-          <option value="theguardian">The Guardian</option>
-          <option value="nytimes">New York Times</option>
-        </select>
-      </form>
-      <br>
-      </div>
-      <div class="panel-footer"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-
-    </div>
-  </div>
-</div>
-
-
+<script type="text/javascript" src="ui.js"></script>
 <script src="script.js"></script>
 </body>
+
 </html>
