@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- MOMENT CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 </head>
-
 <body>
-	<div class="wrapper">
-		<div class="row header">
-			<div class="jumbotron">
-				<h1>Get Me There, I don't care!</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 container">
-				<div class="col-lg-3 from">
-					<h2>From</h2>
-					<br>
-					<div id="custom-search-input">
-						<div class="input-group col-sm-12">
-							<input type="text" class="form-control input-lg" placeholder="From" id="from-input" />
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 dropdown">
-					<h2>Seats</h2>
-					<br>
-					<div class="form-group">
-						<select class="form-control" id="seat-number">
-    						<option>1</option>
-    						<option>2</option>
-    						<option>3</option>
-    						<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-  						</select>
-					</div>
-				</div>
-				<div class="col-lg-3 to">
-					<h2>When</h2>
-					<div class="bootstrap-iso">
-						<div class="container-fluid">
-							<form method="post">
-								<div class="form-group">
-									<br>
-									<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 to">
-					<h2>Where</h2>
-					<br>
-					<div id="custom-search-input">
-						<div class="input-group col-sm-12">
-							<input type="text" class="form-control input-lg" placeholder="To" id="to-input" />
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 jumbotron">
+      <h1>News Headlines...</h1>
+        <p>Your one stop customizable shop!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div id="newsDiv1" class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center"></div>
+      <div class="panel-body">
+      <form class="text-center">
+        <select id="newsSelect1" onchange="pickNews(this.value, 1)" name="news1">
+          <option>Make a selection...</option>
+          <option value="assocpress">Associated Press</option>
+          <option value="bbc">BBC</option>
+          <option value="theguardian">The Guardian</option>
+          <option value="nytimes">New York Times</option>
+        </select>
+      </form>
+      <br>
+      </div>
+      <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div id="newsDiv2" class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center"></div>
+      <div class="panel-body">
+      <form class="text-center">
+        <select id="newsSelect2" onchange="pickNews(this.value, 2)" name="news2">
+          <option>Make a selection...</option>
+          <option value="assocpress">Associated Press</option>
+          <option value="bbc">BBC</option>
+          <option value="theguardian">The Guardian</option>
+          <option value="nytimes">New York Times</option>
+        </select>
+      </form>
+      <br>
+      </div>
+      <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div id="newsDiv3" class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center"></div>
+      <div class="panel-body">
+      <form class="text-center">
+        <select id="newsSelect3" onchange="pickNews(this.value, 3)" name="news3">
+          <option>Make a selection...</option>
+          <option value="assocpress">Associated Press</option>
+          <option value="bbc">BBC</option>
+          <option value="theguardian">The Guardian</option>
+          <option value="nytimes">New York Times</option>
+        </select>
+      </form>
+      <br>
+      </div>
+      <div class="panel-footer"></div>
+      </div>
+    </div>
+  </div>
 
-			<div class="col-lg-12">
-				<br>
-				<button type="button" id="search-button" class="btn">Let's Get Out of Here</button>
-			</div>
-		</div>
-		<br>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="container" id="flight-option-one">
+  <div class="row">
+    <div class="col-sm-12">
 
-				</div>
-				<div class="container row" id="flight-option-two">
+    </div>
+  </div>
+</div>
 
-				</div>
-			</div>
-		</div>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 
-		<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-		<script type="text/javascript" src="javascript.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
