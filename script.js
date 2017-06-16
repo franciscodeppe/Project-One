@@ -1,3 +1,5 @@
+let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
+
 let pickNews = function (x, y) {
   if (x === 'nytimes') nytimes(y);
   if (x === 'theguardian') theguardian(y);
@@ -11,7 +13,7 @@ let pickNews = function (x, y) {
 
 
 let bbc = function (x) {
-  let queryURL = 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=469cf0be81ab487c8d6f31374930c8bd';
+  let queryURL = 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=' + newsAPI;
 
   $.ajax({
     url: queryURL,
