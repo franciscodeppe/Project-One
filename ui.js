@@ -1,6 +1,6 @@
 
 var open = false;
-$("#logo").on("click", function() {
+$("#header").on("click", function() {
     if (open === false) {
         open = true;
         openNav()
@@ -11,8 +11,8 @@ $("#logo").on("click", function() {
 });
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "400px";
-    document.getElementById("main").style.marginLeft = "400px";
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("main").style.marginLeft = "300px";
 }
 
 
@@ -22,30 +22,45 @@ function closeNav() {
 }
 
 
-$("#nySlider").slider();
-$("#nySlider").on("slide", function(slideEvt) {
-    $("#nySliderVal").text(slideEvt.value)
+$("#nytSlider").slider();
+$("#nytSlider").on("slide", function(slideEvt) {
+    $("#nytSliderVal").text(slideEvt.value)
 	num = slideEvt.value;
 });
 
 $("#nySliderVal").text($("#nyCurrentSliderValLabel").attr("data-slider-value"))
 
-point to "#main"div on index.html
+$("#bfSlider").slider();
+$("#bfSlider").on("slide", function(slideEvt) {
+    $("#bfSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
 
-$(yes/no switch)on("change" function() {
-	var newsDiv = $("<div>")
-	newsDiv.addClass("col-lg-4")
-	for (# of news inputs) {
-		var newsRow = $("<div>").addClass("row")
-		var newsImage = img from news source
-		newsImage.addClass(col-lg-5)
-		var content = contect from news source
-		content.addClass(col-lg-7)
-		newsRow.append(newsImage)
-		newsRow.append(content)
+$("#bfSliderVal").text($("#bfCurrentSliderValLabel").attr("data-slider-value"))
 
-		newsDiv.append(newsRow)
-	}
 
-	$("#main").append(newsDiv)
+$(document).ready(function() {
+	var img = url(theLatest.png)
+	$(img).addClass({"webkitFilter": grayscale(100%),
+	"filter": grayscale(100%);})
+	$(body).css({"background-image": img})
 })
+// point to "#main"div on index.html
+//
+// $(yes/no switch)on("change" function() {
+// 	var newsDiv = $("<div>")
+// 	newsDiv.addClass("col-lg-4")
+// 	for (# of news inputs) {
+// 		var newsRow = $("<div>").addClass("row")
+// 		var newsImage = img from news source
+// 		newsImage.addClass(col-lg-5)
+// 		var content = contect from news source
+// 		content.addClass(col-lg-7)
+// 		newsRow.append(newsImage)
+// 		newsRow.append(content)
+//
+// 		newsDiv.append(newsRow)
+// 	}
+//
+// 	$("#main").append(newsDiv)
+// })

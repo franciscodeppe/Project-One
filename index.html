@@ -14,35 +14,56 @@
 </head>
 
 <body>
+<div class="img-holder">
+	<img class='img-rounded logo' src="theLatest.png" alt="">
+</div>
 	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header"></div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<a id="logo"><img alt=""><h1 class="nav navbar-nav">The Latest</h1></a>
+				<a href="#" id="header"><h1 class="nav navbar-nav">The Latest</h1></a>
 			</div>
 		</div>
 	</nav>
-	<div id="mySidenav" class="sidenav">
-		<div class="container">
-			<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
-			<div id="nytoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<input type="checkbox" checked data-toggle="toggle">
+	<div id="wrapper">
+		<div id="mySidenav" class="sidenav">
+			<div class="container">
+				<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
+				<div id="nytoptions" class="collapse">
+					<div class="container">
+						<div class="row">
+							<div class="container switch">
+								<input type="checkbox" checked data-toggle="toggle">
+							</div>
+						</div>
+						<div class="row">
+							<div class="container number">
+								<span class="sliders " id="nytCurrentSliderValLabel">Feed Size<span id="nytSliderVal"></span></span><br>
+								<input id="nytSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders " id="nyCurrentSliderValLabel">Feed Size<span id="nySliderVal"></span></span><br>
-							<input id="nySlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+				</div>
+				<a><h2 data-toggle="collapse" data-target="#bfoptions">BuzzFeed</h2></a>
+				<div id="bfoptions" class="collapse">
+					<div class="container">
+						<div class="row">
+							<div class="container switch">
+								<input type="checkbox" checked data-toggle="toggle">
+							</div>
+						</div>
+						<div class="row">
+							<div class="container number">
+								<span class="sliders " id="bfCurrentSliderValLabel">Feed Size<span id="bfSliderVal"></span></span><br>
+								<input id="bfSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="main" class="container">
+		<div id="main" class="container">
+		</div>
 	</div>
 
 </body>
