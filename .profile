@@ -1,0 +1,2 @@
+alias atom='atom.cmd'
+
