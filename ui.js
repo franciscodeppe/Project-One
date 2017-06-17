@@ -46,12 +46,23 @@ $("#twSlider").on("slide", function(slideEvt) {
 
 $("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
 
+
+
+
+
+// ----------------------------------------
 // point to "#main"div on index.html
-let pickNews = function (x, y) {
-  if (x=== "nytimes") nytimes(y);
-  if (x==="buzzfeed") buzzfeed(y);
-  if (x === "twitter") twitter(y);
-};
+
+
+var nytSwitch;
+var nyt = "the-new-york-times";
+
+
+// let pickNews = function (x, y) {
+//   if (x=== "nytimes") nytimes(y);
+//   if (x==="buzzfeed") buzzfeed(y);
+//   if (x === "twitter") twitter(y);
+// };
 let printNews = function (x) {
   // let queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?' + $.param({
   //   'api-key': "e77c50dfeb48404d9461aad63e81fc72"});
@@ -61,7 +72,7 @@ let printNews = function (x) {
     method: 'GET',
   }).done(function(snapshot) {
     console.log(snapshot);
-    var newsDiv = $('<div id="newsDiv' + x + '"class="col-lg-4"');
+    var newsDiv = $('<div id="newsDiv' + x + '"class="col-lg-4">');
     for (let i = 0; i < 10 && i < snapshot.articles.length; i++) {
       var newsRow = $('<div class="row">');
       var newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="col-lg-5">');
@@ -80,10 +91,17 @@ let printNews = function (x) {
 
 };
 
-$('#buzzswitch').on('change', function (event) {
-  event.preventDefault();
-  var switchStatus = true;
-  printNews('buzzfeed');
+$('#nytswitch').on('click', function (event) {
+  console.log(true);
+  // event.preventDefault();
+  if (!nytSwitch) {
+  nytswitch = true;
+  printNews(nyt);
+  }
+  else {
+    nytSwitch = false;
+    newsDivnyt.remove();
+  }
 });
 // $(yes/no switch)on("change" function() {
 // 	var newsDiv = $("<div>");
