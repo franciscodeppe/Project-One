@@ -61,15 +61,12 @@ let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
     printNews(x, y, slVal);
   } else {
     stateArr[y] = false;
-    //$('#newsDiv' + y).remove();
-
+    $('#newsDiv' + y).remove();
   }
-
 };
 
 let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider value
   if (stateArr[y] === true) {
-    //$('#contentDiv' + y).remove();
     printNews(x, y, z);
   } else {
     return false;
@@ -79,35 +76,37 @@ let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider 
 let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider val
   let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
   let queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
-
   $.ajax({
     url: queryURL,
     method: 'GET',
   }).done(function(snapshot) {
-    console.log(snapshot);
 
-    if (!$('#newsDiv' + y).length) {
-      $('#main').append($('<div id="newsDiv' + y + '"'))
+    if ($('#newsDiv' + y).length === 0) {
+      $('#main').append('<div id="newsDiv' + y + '"></div>')
       $('#newsDiv' + y).addClass('row');
+    } else {
+      $('#newsDiv' + y).empty();
+      console.log('success');
     }
 
-    for (let i = 0; i < y && i < snapshot.articles.length; i++) {
+    for (let i = 0; i < z && i < snapshot.articles.length; i++) {
+      console.log(i);
       let article = $('<div class="row">');
-      let image = $('<img src="' + snapshot.article[i].urlToImage + '" class="col-lg-5"');
-      let headline = $('<div class="col-lg-7">')
 
-    }
+      let image = $('<img src="' + snapshot.articles[i].urlToImage +
+      '" class="col-lg-5">');
 
-    for (let i = 0; i < y && i < snapshot.articles.length; i++) {
-      var newsRow = $('<div class="row">');
-      var newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="col-lg-5">');
-      var content = $('<div class="col-lg-7">');
-      content.html('<p class="text-center"><a href="' + snapshot.articles[i].url + '">' + snapshot.articles[i].title + '</a>' +
-        '<p class="text-center">' + snapshot.articles[i].description + '</p>');
-      newsRow.append(newsImage);
-      contentDiv.append(content);
-      contentDiv.append(newsRow);
-      $('#newsDiv' + z).append(contentDiv);
+      let content = $('<div class="col-lg-7">');
+
+      content.html(
+        '<p><a href="' + snapshot.articles[i].url + '">' +
+        snapshot.articles[i].title + '</a></p>' +
+        '<p>' + snapshot.articles[i].description + '</p>'
+      );
+      article.append(image);
+      article.append(content);
+      $('#newsDiv' + y).append(article);
+
     }
 
   }).fail(function(err) {
