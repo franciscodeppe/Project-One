@@ -11,8 +11,8 @@ $("#header").on("click", function() {
 });
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
-    document.getElementById("main").style.marginLeft = "300px";
+    document.getElementById("mySidenav").style.width = "325px";
+    document.getElementById("main").style.marginLeft = "325px";
 }
 
 
@@ -38,13 +38,13 @@ $("#bfSlider").on("slide", function(slideEvt) {
 
 $("#bfSliderVal").text($("#bfCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#twSlider").slider();
-$("#twSlider").on("slide", function(slideEvt) {
-    $("#twSliderVal").text(slideEvt.value)
+$("#wsjSlider").slider();
+$("#wsjSlider").on("slide", function(slideEvt) {
+    $("#wsjSliderVal").text(slideEvt.value)
 	num = slideEvt.value;
 });
 
-$("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
+$("#wsjSliderVal").text($("#wsjCurrentSliderValLabel").attr("data-slider-value"))
 
 // point to "#main"div on index.html
 //
