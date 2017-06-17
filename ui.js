@@ -10,14 +10,16 @@ $("#header").on("click", function() {
 });
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "325px";
-    document.getElementById("main").style.marginLeft = "325px";
+    document.getElementById("mySidenav").style.width = "300px";
 }
+
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+
 
 $("#nytSlider").slider();
 $("#nytSlider").on("slide", function(slideEvt) {
@@ -27,29 +29,59 @@ $("#nytSlider").on("slide", function(slideEvt) {
 
 $("#nySliderVal").text($("#nyCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#bfSlider").slider();
-$("#bfSlider").on("slide", function(slideEvt) {
-    $("#bfSliderVal").text(slideEvt.value)
+$("#bbcSlider").slider();
+$("#bbcSlider").on("slide", function(slideEvt) {
+    $("#bbcSliderVal").text(slideEvt.value)
     num = slideEvt.value;
 });
 
-$("#bfSliderVal").text($("#bfCurrentSliderValLabel").attr("data-slider-value"))
+$("#bbcSliderVal").text($("#bbcCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#wsjSlider").slider();
-$("#wsjSlider").on("slide", function(slideEvt) {
-    $("#wsjSliderVal").text(slideEvt.value)
+$("#twSlider").slider();
+$("#twSlider").on("slide", function(slideEvt) {
+    $("#twSliderVal").text(slideEvt.value)
     num = slideEvt.value;
 });
 
-$("#wsjSliderVal").text($("#wsjCurrentSliderValLabel").attr("data-slider-value"))
+$("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
 
 
-// ------------------------------------------------------------------
 
-let nyt_switch;
-let nyt = "the-new-york-times";
 
-let printNews = function(x) {
+
+// ----------------------------------------
+// point to "#main"div on index.html
+
+let stateArr = [false, false, false];
+
+let togFn = function(x, y, z) {
+    if (stateArr[y] === false) {
+        stateArr[y] = true;
+        let slVal = $('#' + z).val();
+        $('#main').append($('<div id="newsDiv' + y + '"class="col-lg-4 newsDiv">'));
+        printNews(x, slVal, y);
+    } else {
+        stateArr[y] = false;
+        $('#newsDiv' + y).remove();
+
+    }
+    //console.log(stateArr[x]);
+};
+
+let slideChange = function(x, y, z) {
+    if (stateArr[y] === true) {
+        $('#contentDiv' + y).remove();
+        printNews(x, z, y);
+    } else {
+        return false;
+    }
+};
+
+let printNews = function(x, y, z) {
+    //console.log(x);
+    //console.log(y);
+    console.log('success');
+    let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
     // let queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?' + $.param({
     //   'api-key': "e77c50dfeb48404d9461aad63e81fc72"});
     let queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
@@ -57,18 +89,18 @@ let printNews = function(x) {
         url: queryURL,
         method: 'GET',
     }).done(function(snapshot) {
-        console.log(true);
-        let newsDiv = $('<div id="newsDiv' + x + '"class="col-lg-4 newsContent">');
-        for (let i = 0; i < 10 && i < snapshot.articles.length; i++) {
-            let newsRow = $('<div class="row content_row">');
-            let newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="row content_image col-lg-4">');
-            let content = $('<div class="row article_content col-lg-8">');
+        console.log(snapshot);
+        var contentDiv = $('<div id="contentDiv' + z + '"class="newsContent">');
+        for (let i = 0; i < y && i < snapshot.articles.length; i++) {
+            var newsRow = $('<div class="row content_row">');
+            var newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '"class="row content_image">');
+            var content = $('<div class="row article_content">');
             content.html('<p class="text-center"><a href="' + snapshot.articles[i].url + '">' + snapshot.articles[i].title + '</a>' +
-                '<p class="text-center">' + snapshot.articles[i].description + '</p>');
+                '<p>' + snapshot.articles[i].description + '</p>');
             newsRow.append(newsImage);
-            newsDiv.append(content);
-            newsDiv.append(newsRow);
-            $("#main").append(newsDiv);
+            newsRow.append(content);
+            contentDiv.append(newsRow);
+            $('#newsDiv' + z).append(contentDiv);
         }
 
     }).fail(function(err) {
@@ -76,29 +108,3 @@ let printNews = function(x) {
     });
 
 };
-
-$('#nytSwitch').on('change', function(event) {
-    event.preventDefault();
-    console.log(true);
-
-    if (!nyt_switch) {
-        nyt_switch = true;
-        printNews(nyt);
-    } else {
-        nyt_switch = false;
-
-    }
-});
-// $(yes/no switch)on("change" function() {
-// 	let newsDiv = $("<div>");
-// 	newsDiv.addClass("col-lg-4");
-// 	for (# of news inputs) {
-// 		let newsRow = $("<div>").addClass("row");
-// 		var newsImage = img from news source
-// 		newsImage.addClass(col-lg-5)
-// 		var content = contect from news source
-// 		content.addClass(col-lg-7)
-// 		newsRow.append(newsImage)
-// 		newsRow.append(content)
-// 		newsDiv.append(newsRow);
-// })
