@@ -4,6 +4,7 @@ body {
 	background-color: gray;
 	background-size: 35%;
 	background-repeat: no-repeat;
+	width: 100vw;
 
 }
 
@@ -19,6 +20,7 @@ body h2 {
 
 #wrapper {
 	position: absolute;
+	display: flex;
 	top: 100px;
 }
 /*Logo*/
@@ -59,8 +61,9 @@ body h2 {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-	float: left;
 	padding-top: 15px;
+	position: static;
+	float: left;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -71,6 +74,7 @@ body h2 {
     display: block;
     transition: 0.3s;
 	margin-bottom: 15px;
+	margin-right: 10px;
 }
 .sidenav a:hover {
 	cursor: pointer;
@@ -125,18 +129,24 @@ body h2 {
     transition: margin-left .5s;
     padding: 25px;
 	display: flex;
+	float: left;
+
 }
-.newsContent {
+.newsDiv {
+	height: 100%;
+	display: flex;
+	padding: 15px;
+	max-height: 500px;
+	overflow: scroll;
 	background-color: white;
 	border-radius: 5px;
 	border: 3px solid black;
-	height: 400px;
-	padding: 15px;
-	overflow: scroll;
-	text-align: justify;
+}
+.newsContent {
+	padding: 20px;
 }
 .content_image {
-	height: 75px;
+	width: 280px;
 }
 .content_row {
 	border-bottom: 3px solid black;

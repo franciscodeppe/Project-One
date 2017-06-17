@@ -61,8 +61,8 @@ let printNews = function(x) {
         let newsDiv = $('<div id="newsDiv' + x + '"class="col-lg-4 newsContent">');
         for (let i = 0; i < 10 && i < snapshot.articles.length; i++) {
             let newsRow = $('<div class="row content_row">');
-            let newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="row content_image">');
-            let content = $('<div class="row article_content">');
+            let newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="row content_image col-lg-4">');
+            let content = $('<div class="row article_content col-lg-8">');
             content.html('<p class="text-center"><a href="' + snapshot.articles[i].url + '">' + snapshot.articles[i].title + '</a>' +
                 '<p class="text-center">' + snapshot.articles[i].description + '</p>');
             newsRow.append(newsImage);
