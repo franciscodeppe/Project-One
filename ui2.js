@@ -53,6 +53,7 @@ $("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
 // point to "#main"div on index.html
 
 let stateArr = [false, false, false];
+let titleArr = ['NYT', 'BBC'];
 
 let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
   if (stateArr[y] === false) {
@@ -88,7 +89,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       $('#newsDiv' + y).empty();
       console.log('success');
     }
-
+      $('#newsDiv' + y).append('<button>' + titleArr[y] + '</button>');//DO NOT TOUCH
     for (let i = 0; i < z && i < snapshot.articles.length; i++) {
       console.log(i);
       let article = $('<div class="row">');
