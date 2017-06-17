@@ -1,6 +1,6 @@
 let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
 
-let pickNews = function (x, y) {
+let pickNew = function (x, y) {
   if (x === 'nytimes') nytimes(y);
   if (x === 'theguardian') theguardian(y);
   if (x === 'bbc') bbc(y);
@@ -109,7 +109,7 @@ let theguardian = function (x) {
 
 };
 
-let nytimes = function (x) {
+let nytimesnews = function (x) {
   // let queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?' + $.param({
   //   'api-key': "e77c50dfeb48404d9461aad63e81fc72"});
   let queryURL = 'https://newsapi.org/v1/articles?source=the-new-york-times&sortBy=top&apiKey=' + newsAPI;
