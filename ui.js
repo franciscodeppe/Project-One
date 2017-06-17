@@ -58,7 +58,7 @@ let togFn = function(x, y, z) {
     if (stateArr[y] === false) {
         stateArr[y] = true;
         let slVal = $('#' + z).val();
-        $('#main').append($('<div id="newsDiv' + y + '"class="col-lg-4 newsDiv">'));
+        $('#main').append($('<div id="newsDiv' + y + '"class="panel panel-default col-lg-4 newsDiv">' + "nyt" ));
         printNews(x, slVal, y);
     } else {
         stateArr[y] = false;
@@ -90,16 +90,20 @@ let printNews = function(x, y, z) {
         method: 'GET',
     }).done(function(snapshot) {
         console.log(snapshot);
-        var contentDiv = $('<div id="contentDiv' + z + '"class="newsContent">');
+		var panelHeading = $('<div ' + 'class="panel-heading">' )
+		var contentDiv = $('<div id="contentDiv' + z + '"class="panel-body newsContent">');
+
         for (let i = 0; i < y && i < snapshot.articles.length; i++) {
+
             var newsRow = $('<div class="row content_row">');
             var newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '"class="row content_image">');
             var content = $('<div class="row article_content">');
-            content.html('<p class="text-center"><a href="' + snapshot.articles[i].url + '">' + snapshot.articles[i].title + '</a>' +
+            content.html('<p><a href="' + snapshot.articles[i].url + '">' + snapshot.articles[i].title + '</a>' +
                 '<p>' + snapshot.articles[i].description + '</p>');
             newsRow.append(newsImage);
             newsRow.append(content);
             contentDiv.append(newsRow);
+			$('#newsDiv' + z).append(panelHeading);
             $('#newsDiv' + z).append(contentDiv);
         }
 
