@@ -54,43 +54,50 @@ $("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
 
 let stateArr = [false, false, false];
 
-let togFn = function (x, y, z) {
+let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
   if (stateArr[y] === false) {
     stateArr[y] = true;
     let slVal = $('#' + z).val();
-    $('#main').append($('<div id="newsDiv' + y + '"class="col-lg-4">'));
-    printNews(x, slVal, y);
+    printNews(x, y, slVal);
   } else {
     stateArr[y] = false;
-    $('#newsDiv' + y).remove();
+    //$('#newsDiv' + y).remove();
 
   }
-  //console.log(stateArr[x]);
+
 };
 
-let slideChange = function (x, y, z) {
+let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider value
   if (stateArr[y] === true) {
-    $('#contentDiv' + y).remove();
-    printNews(x, z, y);
+    //$('#contentDiv' + y).remove();
+    printNews(x, y, z);
   } else {
     return false;
   }
 };
 
-let printNews = function (x, y, z) {
-  //console.log(x);
-  //console.log(y);
-  console.log('success');
+let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider val
   let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
-  // let queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?' + $.param({
-  //   'api-key': "e77c50dfeb48404d9461aad63e81fc72"});
   let queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
+
   $.ajax({
     url: queryURL,
     method: 'GET',
   }).done(function(snapshot) {
     console.log(snapshot);
-    var contentDiv = $('<div id="contentDiv' + z + '"class="col-lg-4">');
+
+    if (!$('#newsDiv' + y).length) {
+      $('#main').append($('<div id="newsDiv' + y + '"'))
+      $('#newsDiv' + y).addClass('row');
+    }
+
+    for (let i = 0; i < y && i < snapshot.articles.length; i++) {
+      let article = $('<div class="row">');
+      let image = $('<img src="' + snapshot.article[i].urlToImage + '" class="col-lg-5"');
+      let headline = $('<div class="col-lg-7">')
+
+    }
+
     for (let i = 0; i < y && i < snapshot.articles.length; i++) {
       var newsRow = $('<div class="row">');
       var newsImage = $('<img src="' + snapshot.articles[i].urlToImage + '" class="col-lg-5">');
