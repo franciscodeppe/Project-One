@@ -13,13 +13,15 @@ function openNav() {
     $("#mySidenav").css('width', '300px' )
     $("#main").css('marginLeft', '300px' )
     $("#main").css('width', '95%')
+	$(".newsDiv").css('width','95%')
 }
 
 
 function closeNav() {
     $("#mySidenav").css('width', '0' )
-    // $("#main").css('marginLeft', '0' )
+    $("#main").css('marginLeft', '20px' )
     $("#main").css('width', '95%')
+	$(".newsDiv").css('width','95%')
 }
 
 

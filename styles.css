@@ -1,164 +1,184 @@
 body {
-  font-family: "Lato", sans-serif;
-  background-color: gray;
-
-	width: 100vw;
+    font-family: "Lato", sans-serif;
+    width: 100vw;
+	position: fixed;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
+
 .row {
-	margin: 0px;
+    margin: 0px;
 }
 
 body h1 {
-	font-family: 'Lily Script One', cursive;
-	color: black;
-
+    font-family: 'Lily Script One', cursive;
+    color: black;
 }
 
 body h2 {
-	margin: 0px;
+    margin: 0px;
 }
 
 #wrapper {
-	position: absolute;
-	display: flex;
-	top: 85px;
-  width: 95vw;
+    position: absolute;
+    display: flex;
+    top: 85px;
+    width: 95vw;
 }
+
+.background {
+	position: absolute;
+	z-index: 0;
+	background-color: blue;
+	opacity: .5;
+
+}
+
 /*Logo*/
 
 .logo {
-    position:absolute;
-    top: 40%;
-    left: 41%;
-    z-index:0;
+	width: 250px
+    z-index: 0;
     -webkit-filter: grayscale(100%);
 }
 
+
 /*Navbar top*/
+
 #header {
-	text-align: center;
-	text-decoration: none;
+    text-align: center;
+    text-decoration: none;
 }
 
 .navbar-fixed-top {
-	height: auto;
-	display: block;
-	text-align: center;
-	border-bottom: 10px solid black;
-	background-color: white;
-}
-.navbar-nav {
-	float: none;
-}
-.navbar {
-	margin-bottom: none;
-  height: 90px;
-  padding-top: 22px;
+    height: auto;
+    display: block;
+    text-align: center;
+    border-bottom: 10px solid black;
+    background-color: white;
 }
 
+.navbar-nav {
+    float: none;
+}
+
+.navbar {
+    margin-bottom: none;
+    height: 90px;
+    padding-top: 22px;
+}
 
 
 /*Sidebar*/
+
 .sidenav {
-	padding-left: 20px;
+    padding-left: 20px;
     height: 100vh;
     width: 0;
     z-index: 1;
-    background-color: #111;
+    background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
-	padding-top: 15px;
-	position: absolute;
-	float: left;
-	font-family: 'Montserrat', sans-serif;
-  border-right: 5px solid black;
+    padding-top: 15px;
+    position: absolute;
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    border-right: 5px solid black;
 }
 
 .sidenav a {
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: black;
     display: block;
     transition: 0.3s;
-	margin-bottom: 15px;
-	margin-right: 10px;
-}
-.sidenav a:hover {
-	cursor: pointer;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
 
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+.sidenav a:hover {
+    cursor: pointer;
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: gray;
 }
 
 .slider:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
+
 
 /*Dropdown*/
-.dropdown-menu {
-	background-color: #222;
-	text-align: center;
-}
-.dropdown-menu li a {
-	color: #9d9d9d;
-	padding-bottom: 10px;
 
+.dropdown-menu {
+    background-color: #222;
+    text-align: center;
 }
+
+.dropdown-menu li a {
+    color: black;
+    padding-bottom: 10px;
+}
+
 .dropdown-text {
-	color: white;
-	margin-right: 15px;
-	display: -webkit-inline-box;
-	font-size: 20px;
-	text-align: center;
+    color: black;
+    margin-right: 15px;
+    display: -webkit-inline-box;
+    font-size: 20px;
+    text-align: center;
 }
 
 .dropdown-li {
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.slider.slider-horizontal {
-	margin-top: -10px;
-}
-.number {
-	height: 60px;
-}
-.switch {
-	padding-top: 10px;
 
+.slider.slider-horizontal {
+    margin-top: -10px;
 }
+
+.number {
+    height: 60px;
+}
+
+.switch {
+    padding-top: 10px;
+}
+
 
 /*Main*/
 
 #main {
-  transition: margin-left .5s;
-  padding: 25px;
-	float: left;
-  width: 95%;
-
+    transition: margin-left .5s;
+    padding: 25px;
+    float: left;
+    width: 95%;
+	z-index: 2;
 }
+
 .newsDiv {
-  display: flex;
-  height: 340px;
-  width: auto;
-  white-space:nowrap;
-  padding: 15px;
-  overflow-x:scroll;
-  overflow-y: hidden;
-	background-color: white;
-	border-radius: 5px;
+    display: flex;
+    height: 340px;
+    white-space: nowrap;
+    padding: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: white;
+    border-radius: 5px;
+	border: 2px dotted gray;
 }
+
 .newsContent {
-  display: inline-block;
-  width: 400px;
-  height: 320px;
-
+    display: inline-block;
+    width: 320px;
+    height: 320px;
 }
-.newsContent img {
 
-}
-.articleContent {
-  word-wrap: normal;
+.newsContent img {}
+
+.articleContent p {
+    word-wrap: normal;
 }
