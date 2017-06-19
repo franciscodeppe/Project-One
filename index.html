@@ -20,6 +20,9 @@
 	<div class="background">
 		<img src="background.jpg" alt="">
 	</div>
+	<div class="img-holder">
+		<img class="img-rounded logo" src="theLatest.png" alt="">
+	</div>
 	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header"></div>
@@ -54,39 +57,37 @@
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('bbc', 1, 'bbcSlider')" type="checkbox" data-toggle="toggle" id="bbcswitch">
+							<input onchange="togFn('bbc-news', 1, 'bbcSlider')" type="checkbox" data-toggle="toggle" id="bbcswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
 							<span class="sliders" id="bbcCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="bbcSliderVal"></span></span><br>
-							<input id="bbcSlider" onchange="slideChange('bbc', 1, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<input id="bbcSlider" onchange="slideChange('bbc-news', 1, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
 			<hr />
-			<a><h2 data-toggle="collapse" data-target="#options">New York Times</h2></a>
-			<div id="nytoptions" class="collapse">
+			<a><h2 data-toggle="collapse" data-target="#dlmoptions">Daily Mail</h2></a>
+			<div id="dlmoptions" class="collapse">
 				<div class="container">
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('the-new-york-times', 0, 'nytSlider')" type="checkbox" data-toggle="toggle" id="nytswitch">
+							<input onchange="togFn('daily-mail', 2, 'dlmSlider')" type="checkbox" data-toggle="toggle" id="dlmswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
-							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nytSliderVal"></span></span><br>
-							<input id="nytSlider" onchange="slideChange('the-new-york-times', 0, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<span class="sliders" id="dlmCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="dlmSliderVal"></span></span><br>
+							<input id="dlmSlider" onchange="slideChange('daily-mail', 2, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
 			<hr />
-			<div class="img-holder">
-				<img class="img-rounded logo" src="theLatest.png" alt="">
-			</div>
+
 		</div>
 		<div id="main" class="container">
 		</div>

@@ -12,19 +12,19 @@ $("#header").on("click", function() {
 function openNav() {
     $("#mySidenav").css('width', '300px' )
     $("#main").css('marginLeft', '300px' )
-    $("#main").css('width', '95%')
-	$(".newsDiv").css('width','95%')
+    $("#main").css('width', '100%')
+	$(".newsDiv").css('width','85%')
 }
 
 
 function closeNav() {
     $("#mySidenav").css('width', '0' )
     $("#main").css('marginLeft', '20px' )
-    $("#main").css('width', '95%')
-	$(".newsDiv").css('width','95%')
+    $("#main").css('width', '100%')
+	$(".newsDiv").css('width','85%')
 }
 
-
+// sliders-------------------------------
 $("#nytSlider").slider();
 $("#nytSlider").on("slide", function(slideEvt) {
     $("#nytSliderVal").text(slideEvt.value)
@@ -33,21 +33,21 @@ $("#nytSlider").on("slide", function(slideEvt) {
 
 $("#nySliderVal").text($("#nyCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#bfSlider").slider();
-$("#bfSlider").on("slide", function(slideEvt) {
-    $("#bfSliderVal").text(slideEvt.value)
+$("#bbcSlider").slider();
+$("#bbcSlider").on("slide", function(slideEvt) {
+    $("#bbcSliderVal").text(slideEvt.value)
 	num = slideEvt.value;
 });
 
-$("#bfSliderVal").text($("#bfCurrentSliderValLabel").attr("data-slider-value"))
+$("#bbcSliderVal").text($("#bbcCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#twSlider").slider();
-$("#twSlider").on("slide", function(slideEvt) {
-    $("#twSliderVal").text(slideEvt.value)
+$("#dlmSlider").slider();
+$("#dlmSlider").on("slide", function(slideEvt) {
+    $("#dlmSliderVal").text(slideEvt.value)
 	num = slideEvt.value;
 });
 
-$("#twSliderVal").text($("#twCurrentSliderValLabel").attr("data-slider-value"))
+$("#dlmSliderVal").text($("#dlmCurrentSliderValLabel").attr("data-slider-value"))
 
 
 
