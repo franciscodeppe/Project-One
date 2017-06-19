@@ -10,14 +10,16 @@ $("#header").on("click", function() {
 });
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
-    document.getElementById("main").style.marginLeft = "300px";
+    $("#mySidenav").css('width', '300px' )
+    $("#main").css('marginLeft', '300px' )
+    $("#main").css('width', '95%')
 }
 
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    $("#mySidenav").css('width', '0' )
+    // $("#main").css('marginLeft', '0' )
+    $("#main").css('width', '95%')
 }
 
 
@@ -84,20 +86,20 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
 
     if ($('#newsDiv' + y).length === 0) {
       $('#main').append('<div id="newsDiv' + y + '"></div>')
-      $('#newsDiv' + y).addClass('row');
+      $('#newsDiv' + y).addClass('row newsDiv');
     } else {
       $('#newsDiv' + y).empty();
       console.log('success');
     }
-      $('#newsDiv' + y).append('<button>' + titleArr[y] + '</button>');//DO NOT TOUCH
+      $('#newsDiv' + y).append('<h2>' + titleArr[y] + '</h2>');//DO NOT TOUCH
     for (let i = 0; i < z && i < snapshot.articles.length; i++) {
       console.log(i);
-      let article = $('<div class="row">');
+      let article = $('<div class="container newsContent">');
 
       let image = $('<img src="' + snapshot.articles[i].urlToImage +
-      '" class="col-lg-5">');
+      '" class="img-responsive">');
 
-      let content = $('<div class="col-lg-7">');
+      let content = $('<div class="articleContent">');
 
       content.html(
         '<p><a href="' + snapshot.articles[i].url + '">' +
