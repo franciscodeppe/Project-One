@@ -13,7 +13,7 @@ function openNav() {
     $("#mySidenav").css('width', '300px' )
     $("#main").css('marginLeft', '300px' )
     $("#main").css('width', '100%')
-	$(".newsDiv").css('width','85%')
+	$(".newsDiv").css('width','40%')
 }
 
 
@@ -21,7 +21,7 @@ function closeNav() {
     $("#mySidenav").css('width', '0' )
     $("#main").css('marginLeft', '20px' )
     $("#main").css('width', '100%')
-	$(".newsDiv").css('width','85%')
+	$(".newsDiv").css('width','40%')
 }
 
 // sliders-------------------------------
@@ -41,13 +41,55 @@ $("#bbcSlider").on("slide", function(slideEvt) {
 
 $("#bbcSliderVal").text($("#bbcCurrentSliderValLabel").attr("data-slider-value"))
 
-$("#dlmSlider").slider();
-$("#dlmSlider").on("slide", function(slideEvt) {
-    $("#dlmSliderVal").text(slideEvt.value)
+$("#fortuneSlider").slider();
+$("#fortuneSlider").on("slide", function(slideEvt) {
+    $("#fortuneSliderVal").text(slideEvt.value)
 	num = slideEvt.value;
 });
 
-$("#dlmSliderVal").text($("#dlmCurrentSliderValLabel").attr("data-slider-value"))
+$("#fortuneSliderVal").text($("#fortuneCurrentSliderValLabel").attr("data-slider-value"))
+
+$("#timeSlider").slider();
+$("#timeSlider").on("slide", function(slideEvt) {
+    $("#timeSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
+
+$("#timeSliderVal").text($("#timeCurrentSliderValLabel").attr("data-slider-value"))
+
+$("#wsjSlider").slider();
+$("#wsjSlider").on("slide", function(slideEvt) {
+    $("#wsjSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
+
+$("#nflSliderVal").text($("#nflCurrentSliderValLabel").attr("data-slider-value"))
+
+$("#nflSlider").slider();
+$("#nflSlider").on("slide", function(slideEvt) {
+    $("#nflSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
+
+$("#nflSliderVal").text($("#nflCurrentSliderValLabel").attr("data-slider-value"))
+
+$("#mtvSlider").slider();
+$("#mtvSlider").on("slide", function(slideEvt) {
+    $("#mtvSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
+
+$("#cnnSliderVal").text($("#cnnCurrentSliderValLabel").attr("data-slider-value"))
+
+$("#cnnSlider").slider();
+$("#cnnSlider").on("slide", function(slideEvt) {
+    $("#cnnSliderVal").text(slideEvt.value)
+	num = slideEvt.value;
+});
+
+$("#cnnSliderVal").text($("#cnnCurrentSliderValLabel").attr("data-slider-value"))
+
+
 
 
 
@@ -56,8 +98,8 @@ $("#dlmSliderVal").text($("#dlmCurrentSliderValLabel").attr("data-slider-value")
 // ----------------------------------------
 // point to "#main"div on index.html
 
-let stateArr = [false, false, false];
-let titleArr = ['NYT', 'BBC'];
+let stateArr = [false, false, false, false, false, false, false, false, false, false,];
+let titleArr = ['NYT', 'BBC', 'Fortune', 'Time', 'WSJ', 'NFL', 'MTV', 'CNN'];
 
 let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
   if (stateArr[y] === false) {

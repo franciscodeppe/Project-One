@@ -5,6 +5,8 @@ body {
   flex-direction: column;
 	overflow-y: scroll;
 	overflow-x: hidden;
+  background-image: url(background.jpg);
+  background-repeat: repeat;
 }
 
 .row {
@@ -27,20 +29,16 @@ body h2 {
     width: 95vw;
 }
 
-.background img {
-	position: absolute;
-	z-index: 0;
-  width: 100vw;
-  opacity: .3;
-
-}
-
 /*Logo*/
 
 .logo {
 	width: 250px
-    z-index: 0;
+    z-index: 5;
     -webkit-filter: grayscale(100%);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+
 }
 
 
@@ -74,14 +72,14 @@ body h2 {
 
 .sidenav {
     padding-left: 20px;
-    height: 100vh;
+    height: 100%;
     width: 0;
     z-index: 1;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 15px;
-    position: absolute;
+    position: fixed;
     float: left;
     font-family: 'Montserrat', sans-serif;
     border-right: 5px solid black;
@@ -158,19 +156,21 @@ body h2 {
     float: left;
     width: 100%;
 	z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .newsDiv {
     display: flex;
-    width: 85%;
-    height: 375px;
+    width: 40%;
+    height: 300px;
     white-space: nowrap;
     padding: 15px;
     overflow-x: scroll;
     overflow-y: hidden;
     background-color: white;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin: 25px;
 }
 
 .newsContent {

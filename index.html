@@ -69,25 +69,114 @@
 				</div>
 			</div>
 			<hr />
-			<a><h2 data-toggle="collapse" data-target="#dlmoptions">Daily Mail</h2></a>
-			<div id="dlmoptions" class="collapse">
+			<a><h2 data-toggle="collapse" data-target="#fortuneoptions">Fortune</h2></a>
+			<div id="fortuneoptions" class="collapse">
 				<div class="container">
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('daily-mail', 2, 'dlmSlider')" type="checkbox" data-toggle="toggle" id="dlmswitch">
+							<input onchange="togFn('fortune', 2, 'fortuneSlider')" type="checkbox" data-toggle="toggle" id="fortuneswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
-							<span class="sliders" id="dlmCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="dlmSliderVal"></span></span><br>
-							<input id="dlmSlider" onchange="slideChange('daily-mail', 2, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<span class="sliders" id="fortuneCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="fortuneSliderVal"></span></span><br>
+							<input id="fortuneSlider" onchange="slideChange('fortune', 2, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
 			<hr />
-
+			<a><h2 data-toggle="collapse" data-target="#timeoptions">Time</h2></a>
+			<div id="timeoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input onchange="togFn('time', 3, 'timeSlider')" type="checkbox" data-toggle="toggle" id="timeswitch">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="timeCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="timeSliderVal"></span></span><br>
+							<input id="timeSlider" onchange="slideChange('time', 3, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#wsjoptions">Wall Street Journal</h2></a>
+			<div id="wsjoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input onchange="togFn('the-wall-street-journal', 4, 'wsjSlider')" type="checkbox" data-toggle="toggle" id="wsjswitch">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="wsjCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="wsjSliderVal"></span></span><br>
+							<input id="wsjSlider" onchange="slideChange('the-wall-street-journal', 4, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#nfloptions">NFL</h2></a>
+			<div id="nfloptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input onchange="togFn('nfl-news', 5, 'nflSlider')" type="checkbox" data-toggle="toggle" id="nflswitch">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="nflCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nflSliderVal"></span></span><br>
+							<input id="nflSlider" onchange="slideChange('nfl-news', 5, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#mtvoptions">MTV</h2></a>
+			<div id="mtvoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input onchange="togFn('mtv-news', 6, 'mtvSlider')" type="checkbox" data-toggle="toggle" id="mtvswitch">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="mtvCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="mtvSliderVal"></span></span><br>
+							<input id="mtvSlider" onchange="slideChange('mtv-news', 6, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#cnnoptions">CNN</h2></a>
+			<div id="cnnoptions" class="collapse">
+				<div class="container">
+					<div class="row">
+						<div class="container switch">
+							<p class="dropdown-text">Show me this:</p>
+							<input onchange="togFn('cnn', 7, 'cnnSlider')" type="checkbox" data-toggle="toggle" id="cnnswitch">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container number">
+							<span class="sliders" id="cnnCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="cnnSliderVal"></span></span><br>
+							<input id="cnnSlider" onchange="slideChange('cnn', 7, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
 		</div>
 		<div id="main" class="container">
 		</div>
