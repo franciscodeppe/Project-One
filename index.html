@@ -18,7 +18,7 @@
 
 <body>
 	<div class="img-holder">
-		<img class='img-rounded logo' src="theLatest.png" alt="">
+		<img class="img-rounded logo" src="theLatest.png" alt="">
 	</div>
 	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
 		<div class="container">
@@ -36,51 +36,54 @@
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input type="checkbox" data-toggle="toggle">
+							<input onchange="togFn('the-new-york-times', 0, 'nytSlider')" type="checkbox" data-toggle="toggle" id="nytswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
-							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="nytSliderVal"></span></span><br>
-							<input id="nytSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nytSliderVal"></span></span><br>
+							<input id="nytSlider" onchange="slideChange('the-new-york-times', 0, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
-			<a><h2 data-toggle="collapse" data-target="#bfoptions">Buzzfeed</h2></a>
-			<div id="bfoptions" class="collapse">
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#bbcoptions">BBC</h2></a>
+			<div id="bbcoptions" class="collapse">
 				<div class="container">
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input type="checkbox" data-toggle="toggle">
+							<input onchange="togFn('bbc', 1, 'bbcSlider')" type="checkbox" data-toggle="toggle" id="bbcswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
-							<span class="sliders" id="bfCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="bfSliderVal"></span></span><br>
-							<input id="bfSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<span class="sliders" id="bbcCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="bbcSliderVal"></span></span><br>
+							<input id="bbcSlider" onchange="slideChange('bbc', 1, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
-			<a><h2 data-toggle="collapse" data-target="#twoptions">Twitter</h2></a>
-			<div id="twoptions" class="collapse">
+			<hr />
+			<a><h2 data-toggle="collapse" data-target="#options">New York Times</h2></a>
+			<div id="nytoptions" class="collapse">
 				<div class="container">
 					<div class="row">
 						<div class="container switch">
 							<p class="dropdown-text">Show me this:</p>
-							<input type="checkbox" data-toggle="toggle">
+							<input onchange="togFn('the-new-york-times', 0, 'nytSlider')" type="checkbox" data-toggle="toggle" id="nytswitch">
 						</div>
 					</div>
 					<div class="row">
 						<div class="container number">
-							<span class="sliders" id="twCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="twSliderVal"></span></span><br>
-							<input id="twSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
+							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nytSliderVal"></span></span><br>
+							<input id="nytSlider" onchange="slideChange('the-new-york-times', 0, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
 						</div>
 					</div>
 				</div>
 			</div>
+			<hr />
 		</div>
 		<div id="main" class="container">
 		</div>
@@ -96,7 +99,7 @@
 
 <!-- MOMENT CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-<script type="text/javascript" src="ui.js"></script>
+<script type="text/javascript" src="ui2.js"></script>
 <script src="script.js"></script>
 </body>
 
