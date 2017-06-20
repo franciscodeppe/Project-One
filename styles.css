@@ -161,28 +161,27 @@ body h2 {
 }
 
 .newsDiv {
-    display: flex;
     width: 40%;
-    height: 300px;
-    padding: 15px;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    height: 350px;
+    padding: 10px;
     background-color: white;
     border-radius: 5px;
     margin: 25px;
 }
 
 .newsContent {
-    display: inline-block;
-    width: 320px;
-    height: 300px;
-    border: 1px solid black;
+    display: flex;
+    height: 100%;
     margin: 10px;
-    background-color: #f5f5f0;
+    width: 100%;
 }
 
-.newsContent img {}
+.carousel-inner {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
 
-.articleContent p {
-    word-wrap: normal;
+}
+.carousel-control {
+  z-index: 1;
 }

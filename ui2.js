@@ -158,9 +158,9 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
     }
 
       let image = $('<img src="' + snapshot.articles[i].urlToImage +
-      '" class="img-responsive">');
+      '" class="img-responsive col-md-6">');
 
-      let content = $('<div class="articleContent">');
+      let content = $('<div class="articleContent col-md-6">');
 
       content.html(
         '<p><a href="' + snapshot.articles[i].url + '">' +
