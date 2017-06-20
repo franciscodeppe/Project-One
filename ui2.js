@@ -129,16 +129,33 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
   }).done(function(snapshot) {
 
     if ($('#newsDiv' + y).length === 0) {
-      $('#main').append('<div id="newsDiv' + y + '"></div>')
-      $('#newsDiv' + y).addClass('row newsDiv');
+      $('#main').append('<div id="newsDiv'  + y + '"></div>')
+      $('#newsDiv' + y).addClass('row newsDiv carousel slide');
+
     } else {
       $('#newsDiv' + y).empty();
       console.log('success');
     }
-      $('#newsDiv' + y).append('<h2>' + titleArr[y] + '</h2>');//DO NOT TOUCH
+    $('#newsDiv' + y).append('<h2>' + titleArr[y] + '</h2>');//DO NOT TOUCH
+    $('#newsDiv' + y).append(
+    '<a class="left carousel-control" href="#newsDiv'+ y +'" data-slide="prev">' +
+    '<span class="glyphicon glyphicon-chevron-left"></span>' +
+    '<span class="sr-only">Previous</span></a>' +
+
+  '<a class="right carousel-control" href="#newsDiv'+ y +'" data-slide="next">' +
+    '<span class="glyphicon glyphicon-chevron-right"></span>' +
+    '<span class="sr-only">Next</span></a>'
+  )
+  $('#newsDiv' + y).append('<div id="carHolder'+ y +'" class="carousel-inner">')
+
     for (let i = 0; i < z && i < snapshot.articles.length; i++) {
       console.log(i);
-      let article = $('<div class="container newsContent">');
+      let articale;
+      if (i === 0) {
+      article = $('<div class="container newsContent item active">');
+    } else {
+      article = $('<div class="container newsContent item">');
+    }
 
       let image = $('<img src="' + snapshot.articles[i].urlToImage +
       '" class="img-responsive">');
@@ -152,7 +169,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       );
       article.append(image);
       article.append(content);
-      $('#newsDiv' + y).append(article);
+      $('#carHolder'+ y).append(article);
 
     }
 
