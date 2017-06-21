@@ -153,12 +153,13 @@ body h2 {
 
 #main {
     transition: margin-left .5s;
-    padding: 25px;
+    padding: 0;
     float: left;
     width: 100%;
-	z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
+	  z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .newsDiv {
@@ -166,9 +167,11 @@ body h2 {
     height: 400px;
     background-color: white;
     border-radius: 20px;
-    margin: 25px;
-	overflow: hidden;
-	border: 1px solid black;
+    margin: 25px 3%;
+	  overflow: hidden;
+	  border: 1px solid black;
+    max-width: 350px;
+    min-width: 260px;
 }
 
 .newsContent {
@@ -185,9 +188,19 @@ body h2 {
   height: 100%;
   width: 100%;
   z-index: 0;
+}
 
+.carousel-inner .newsContent .img-responsive { /* Article Image Style */
+  max-width: 250px;
+  max-height: 175px;
+  margin: 0 auto;
 
 }
+
+#main .newsDiv {
+
+}
+
 .carousel-control {
   z-index: 1;
   background-image: none !important;
