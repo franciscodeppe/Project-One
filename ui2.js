@@ -152,9 +152,9 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       console.log(i);
       let articale;
       if (i === 0) {
-      article = $('<div class="container newsContent item active">');
+      article = $('<div class="container newsContent item active list-group-item">');
     } else {
-      article = $('<div class="container newsContent item">');
+      article = $('<div class="container newsContent item list-group-item">');
     }
 
       let image = $('<img src="' + snapshot.articles[i].urlToImage +
@@ -172,6 +172,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       $('#carHolder'+ y).append(article);
 
     }
+    Sortable.create(main, { /*options */});
 
   }).fail(function(err) {
     throw err;
