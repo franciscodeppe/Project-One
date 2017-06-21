@@ -32,7 +32,7 @@ body h2 {
 /*Logo*/
 
 .logo {
-    z-index: 5;
+    z-index: 0;
     -webkit-filter: grayscale(100%);
     position: fixed;
     bottom: 0px;
@@ -42,8 +42,6 @@ body h2 {
     text-align: center;
     color: black;
 }
-
-
 
 /*Navbar top*/
 
@@ -170,6 +168,7 @@ body h2 {
     background-color: white;
     border-radius: 20px;
     margin: 25px;
+	overflow: hidden;
 }
 
 .newsContent {
@@ -177,6 +176,7 @@ body h2 {
     height: 100%;
     margin: 10px;
     width: 100%;
+
 }
 
 .carousel-inner {
@@ -184,7 +184,20 @@ body h2 {
   width: 100%;
   z-index: 0;
 
+
 }
 .carousel-control {
   z-index: 1;
+  background-image: none !important;
+
+}
+.carousel-control .glyphicon {
+	color: #006dcc;
+}
+.newsTitle {
+	text-align: center;
+	text-decoration: none;
+}
+.newsTitle a:hover {
+	cursor: grab;
 }

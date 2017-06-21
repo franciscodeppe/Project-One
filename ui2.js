@@ -136,7 +136,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       $('#newsDiv' + y).empty();
       console.log('success');
     }
-    $('#newsDiv' + y).append('<h2>' + titleArr[y] + '</h2>');//DO NOT TOUCH
+    $('#newsDiv' + y).append('<h2 class="newsTitle">' + titleArr[y] + '</h2>');//DO NOT TOUCH
     $('#newsDiv' + y).append(
     '<a class="left carousel-control" href="#newsDiv'+ y +'" data-slide="prev">' +
     '<span class="glyphicon glyphicon-chevron-left"></span>' +
@@ -158,9 +158,9 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
     }
 
       let image = $('<img src="' + snapshot.articles[i].urlToImage +
-      '" class="img-responsive col-md-6">');
+      '" class="img-responsive">');
 
-      let content = $('<div class="articleContent col-md-6">');
+      let content = $('<div class="articleContent">');
 
       content.html(
         '<p><a href="' + snapshot.articles[i].url + '">' +
