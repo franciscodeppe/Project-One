@@ -42,7 +42,10 @@ body h2 {
     text-align: center;
     color: black;
 }
-
+.logo img {
+	width: 150px;
+	height: 160px;
+}
 /*Navbar top*/
 
 #header {
