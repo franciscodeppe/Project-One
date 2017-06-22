@@ -1,3 +1,6 @@
+let artColor; //article background color
+let wordColor; //article text color
+
 for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for each newsObj
   $('#mySidenav').append(
     '<a><h2 data-toggle="collapse" data-target="#' + newsObj[i].id + 'options">' +
@@ -84,7 +87,12 @@ let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider 
 
 let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider val
   let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
-  let queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
+  let queryURL;
+  if (x === 'wirtschafts-woche') {
+    queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=latest&apiKey=' + newsAPI;
+  } else {
+    queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
+  }
   $.ajax({
     url: queryURL,
     method: 'GET',
@@ -97,7 +105,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
     } else {
       $('#newsDiv' + y).empty();
     }
-    $('#newsDiv' + y).append('<h2 class="newsTitle">' + newsObj[y].title + '</h2>');//DO NOT TOUCH
+    $('#newsDiv' + y).append('<h2 class="newsTitle">' + newsObj[y].title + '</h2>');
     $('#newsDiv' + y).append(
     '<a class="left carousel-control" href="#newsDiv'+ y +'" data-slide="prev">' +
     '<span class="glyphicon glyphicon-chevron-left"></span>' +
@@ -134,20 +142,34 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
     }
     Sortable.create(main, { /*options */}); //Click & Drag for news boxes
 
+    if (artColor !== undefined) { //applies color changes if any were defined
+      $('.list-group-item.active').css('background-color', artColor);
+      $('.list-group-item').css('background-color', artColor);
+    }
+    if (wordColor !== undefined) {
+      $('.list-group-item.active').css('color', wordColor);
+      $('.list-group-item').css('color', wordColor);
+    }
+
   }).fail(function(err) {
     throw err;
   });
 
 };
 
-
 $('.ColorBlotch').on('click', function (event) {
   event.preventDefault();
   let newColor = $(this).css('background-color');
   if ($(this).parent().prop('id') === 'MyColorSelector') {
-    $('.list-group-item.active').css('background-color', newColor);
+    artColor = newColor;
+    $('.list-group-item.active').css('background-color', artColor);
+    $('.list-group-item').css('background-color', artColor);
+
   } else {
-    $('.list-group-item.active').css('color', newColor);
+    wordColor = newColor;
+    $('.list-group-item.active').css('color', wordColor);
+    $('.list-group-item').css('color', wordColor);
+
   }
 
 });
