@@ -104,9 +104,9 @@ firebase.initializeApp(config);
 
 let database = firebase.database()
 
-database.ref().on('value',function(snapshot) {
-	stateArr = snapshot.stateArr
-})
+// database.ref().on('value',function(snapshot) {
+// 	stateArr = snapshot.stateArr
+// })
 
 
 
