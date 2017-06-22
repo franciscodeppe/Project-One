@@ -139,3 +139,15 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
   });
 
 };
+
+
+$('.ColorBlotch').on('click', function (event) {
+  event.preventDefault();
+  let newColor = $(this).css('background-color');
+  if ($(this).parent().prop('id') === 'MyColorSelector') {
+    $('.list-group-item.active').css('background-color', newColor);
+  } else {
+    $('.list-group-item.active').css('color', newColor);
+  }
+
+});

@@ -149,8 +149,6 @@ body h2 {
 }
 
 .newsContent, .list-group-item {
-  background-color: #FFFFFF !important;
-  color: #000000 !important;
   border: none !important;
   display: flex;
   height: 100%;
@@ -188,4 +186,12 @@ body h2 {
 }
 .newsTitle a:hover {
   cursor: grab;
+}
+
+/* individual news source styles*/
+#newsDiv62 p { /* Times of India has too many words!*/
+  font-size: 11px;
+}
+#newsDiv3 p { /*wow, associated press shoves the entire article on there*/
+  font-size: 9px;
 }
