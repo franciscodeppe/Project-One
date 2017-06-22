@@ -219,3 +219,32 @@ body h2 {
 .newsTitle a:hover {
 	cursor: grab;
 }
+
+/*Weather*/
+
+#weatherbtn {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  width: 140px;
+  font-family: 'Lily+Script+One', cursive;
+  font-weight: 5;
+}
+
+#weatherWell {
+  width: 350px;
+  margin-left: 800px;
+  margin-top: -58.6px;
+  height: 75px;
+  text-align: center;
+}
+
+.info {
+  margin: 0;
+  font-family: 'Lily+Script+One', cursive;
+
+}
+.weatherinfo {
+  margin-top: -19px;
+}
