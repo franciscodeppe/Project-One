@@ -59,7 +59,7 @@ let newsObj = [ //news sources with relevant data
     state: false,
     title: 'Breitbart News',
     link: 'breitbart-news',
-    id: 'bild',
+    id: 'breitbart',
     slider: 5,
   },
   {
