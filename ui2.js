@@ -1,62 +1,3 @@
-let newsObj = [ //news sources with relevant data
-  {
-    state : false,
-    title: 'New York Times',
-    link: 'the-new-york-times',
-    id: 'nyt',
-    slider: 5,
-  },
-  {
-    state : false,
-    title: 'BBC',
-    link: 'bbc-news',
-    id: 'bbc',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'Fortune',
-    link: 'fortune',
-    id: 'fortune',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'Time',
-    link: 'time',
-    id: 'time',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'Wall Street Journal',
-    link: 'the-wall-street-journal',
-    id: 'wsj',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'NFL',
-    link: 'nfl-news',
-    id: 'nfl',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'MTV',
-    link: 'mtv-news',
-    id: 'mtv',
-    slider: 5,
-  },
-  {
-    state: false,
-    title: 'CNN',
-    link: 'cnn',
-    id: 'cnn',
-    slider: 5,
-  },
-];
-
 for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for each newsObj
   $('#mySidenav').append(
     '<a><h2 data-toggle="collapse" data-target="#' + newsObj[i].id + 'options">' +
@@ -99,7 +40,6 @@ function openNav() { //toggle menu open
   $('#mySidenav').css('width', '20%');
   $('#main').css('marginLeft', '20%');
   $('#main').css('width', '80%');
-  //$('.newsDiv').css('width','40%');
 }
 
 
@@ -107,7 +47,6 @@ function closeNav() { //togle menu closed
   $('#mySidenav').css('width', '0');
   $('#main').css('marginLeft', '20px');
   $('#main').css('width', '100%');
-  //$('.newsDiv').css('width','40%');
 }
 
 // sliders-------------------------------

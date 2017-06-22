@@ -96,15 +96,6 @@ body h2 {
 
 /*Dropdown*/
 
-.dropdown-menu {
-  /*background-color: #222;*/
-  /*text-align: center;*/
-}
-
-.dropdown-menu li a {
-  /*color: black;*/
-  /*padding-bottom: 10px;*/
-}
 
 .dropdown-text {
   color: black;
@@ -113,21 +104,6 @@ body h2 {
   font-size: 20px;
   text-align: center;
 }
-
-/*.dropdown-li {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
-
-/*.slider.slider-horizontal {
-  margin-top: -10px;
-}*/
-
-/*.number {
-  height: 60px;
-}*/
 
 .switch {
   padding-top: 10px;
