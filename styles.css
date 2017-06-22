@@ -8,7 +8,7 @@ body {
 }
 body h1 {
   font-family: 'Lily Script One', cursive;
-  color: black;
+  color: #000000;
 }
 body h2 {
   margin: 0;
@@ -33,7 +33,7 @@ body h2 {
   font-family: 'Lily Script One', cursive;
   font-size: 30px;
   text-align: center;
-  color: black;
+  color: #000000;
 }
 .logo img {
   width: 150px;
@@ -51,36 +51,35 @@ body h2 {
   text-align: center;
   height: 90px;
   box-sizing: border-box;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid #000000;
 }
 
 /*Sidebar*/
 
 .sidenav {
-  padding-left: 20px;
+  padding-left: 1%;
   height: 100vh;
   min-height: 100%;
   width: 0;
   z-index: 1;
-  background-color: white;
+  background-color: #FFFFFF;
   overflow-x: hidden;
-  overflow-y:visible;
   transition: 0.5s;
   padding-top: 15px;
   position: absolute;
   float: left;
   font-family: 'Montserrat', sans-serif;
-  border-right: 5px solid black;
-  /*padding-bottom: 50px;*/
+  border-right: 5px solid #000000;
+  box-sizing: border-box;
 }
 
 .sidenav a {
   text-decoration: none;
-  color: black;
+  color: #000000;
   display: block;
   transition: 0.3s;
   margin-bottom: 15px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
 }
 
 .sidenav a:hover {
@@ -98,13 +97,13 @@ body h2 {
 /*Dropdown*/
 
 .dropdown-menu {
-  background-color: #222;
-  text-align: center;
+  /*background-color: #222;*/
+  /*text-align: center;*/
 }
 
 .dropdown-menu li a {
-  color: black;
-  padding-bottom: 10px;
+  /*color: black;*/
+  /*padding-bottom: 10px;*/
 }
 
 .dropdown-text {
@@ -115,20 +114,20 @@ body h2 {
   text-align: center;
 }
 
-.dropdown-li {
+/*.dropdown-li {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
-.slider.slider-horizontal {
+/*.slider.slider-horizontal {
   margin-top: -10px;
-}
+}*/
 
-.number {
+/*.number {
   height: 60px;
-}
+}*/
 
 .switch {
   padding-top: 10px;
@@ -137,7 +136,7 @@ body h2 {
 /*Main*/
 
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 500ms;
   padding: 0;
   float: left;
   width: 100%;
@@ -148,24 +147,29 @@ body h2 {
 }
 
 .newsDiv {
-  width: 40%;
+  width: 100%;
   height: 400px;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 20px;
+  padding-top: 8px;
   margin: 25px 3%;
   overflow: hidden;
   border: 1px solid black;
   max-width: 350px;
   min-width: 260px;
+
 }
 
-.newsContent {
+.newsContent, .list-group-item {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: none !important;
   display: flex;
   height: 100%;
   width: 100%;
 }
 .newsContent a {
-  color: white;
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -181,17 +185,13 @@ body h2 {
   margin: 0 auto;
 }
 
-#main .newsDiv {
-
-}
-
 .carousel-control {
   z-index: 1;
   background-image: none !important;
 
 }
 .carousel-control .glyphicon {
-  color: white;
+  color: #000000;
 }
 .newsTitle {
   text-align: center;

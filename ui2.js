@@ -65,7 +65,7 @@ for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for
     '<div class="container">' +
     '<div class="row">' +
     '<div class="container switch">' +
-    '<p class="dropdown-text">Show me this:</p>' +
+    '<p class="dropdown-text">Show:</p>' +
     '<input onchange="togFn(\'' +
     newsObj[i].link + '\', ' + i + ', ' + newsObj[i].id + 'Slider)" type="checkbox" ' +
     'data-toggle="toggle" id="' + newsObj[i].id + 'switch">' +
@@ -99,7 +99,7 @@ function openNav() { //toggle menu open
   $('#mySidenav').css('width', '20%');
   $('#main').css('marginLeft', '20%');
   $('#main').css('width', '80%');
-  $('.newsDiv').css('width','40%');
+  //$('.newsDiv').css('width','40%');
 }
 
 
@@ -107,7 +107,7 @@ function closeNav() { //togle menu closed
   $('#mySidenav').css('width', '0');
   $('#main').css('marginLeft', '20px');
   $('#main').css('width', '100%');
-  $('.newsDiv').css('width','40%');
+  //$('.newsDiv').css('width','40%');
 }
 
 // sliders-------------------------------
