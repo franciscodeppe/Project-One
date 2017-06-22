@@ -1,32 +1,25 @@
 body {
   font-family: "Lato", sans-serif;
   width: 100vw;
-	display: flex;
-  flex-direction: column;
-	overflow-y: scroll;
-	overflow-x: hidden;
   background-image: url(background.jpg);
   background-repeat: repeat;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-
-.row {
-    margin: 0px;
-}
-
 body h1 {
     font-family: 'Lily Script One', cursive;
     color: black;
 }
-
 body h2 {
     margin: 0px;
 }
-
 #wrapper {
     position: absolute;
-    display: flex;
     top: 85px;
-    width: 95vw;
+    width: 100%;
+}
+.row {
+    margin: 0;
 }
 
 /*Logo*/
@@ -46,31 +39,19 @@ body h2 {
 	width: 150px;
 	height: 160px;
 }
-/*Navbar top*/
+/*Page heading -->top*/
 
 #header {
-    text-align: center;
     text-decoration: none;
 }
-
-.navbar-fixed-top {
-    height: auto;
-    display: block;
-    text-align: center;
-    border-bottom: 10px solid black;
-    background-color: white;
+#pageTop {
+  position: relative;
+  background-color: #FFFFFF;
+  text-align: center;
+  height: 90px;
+  box-sizing: border-box;
+  border-bottom: 10px solid black;
 }
-
-.navbar-nav {
-    float: none;
-}
-
-.navbar {
-    margin-bottom: none;
-    height: 90px;
-    padding-top: 22px;
-}
-
 
 /*Sidebar*/
 

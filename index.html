@@ -1,204 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
-	<link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Latest - News Resource</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
+  <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+  <div class="logo">
+    <img class="img-rounded" src="theLatest.png" alt="the latest logo">
+    <p>The Latest</p>
+  </div>
+  <div id="pageTop" class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <a href="#" id="header"><h1>The Latest</h1></a>
+      </div>
+    </div>
+  </div>
+  <div id="wrapper">
+    <div id="mySidenav" class="sidenav">
+    </div>
+    <div id="main" class="container list-group">
+    </div>
+  </div>
+
+  <!-- jQuery library **repetitive jquery libraries?** -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- MOMENT CDN **needed?** -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
   <!-- Latest Sortable -->
   <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<div class="background">
-		<img src="background.jpg" alt="">
-	</div>
-	<div class="img-holder logo">
-		<img class="img-rounded" src="theLatest.png" alt="">
-		<p>The Latest</p>
-	</div>
-	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header"></div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<a href="#" id="header"><h1 class="nav navbar-nav">The Latest</h1></a>
-			</div>
-		</div>
-	</nav>
-	<div id="wrapper">
-		<div id="mySidenav" class="sidenav">
-			<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
-			<div id="nytoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('the-new-york-times', 0, 'nytSlider')" type="checkbox" data-toggle="toggle" id="nytswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nytSliderVal"></span></span><br>
-							<input id="nytSlider" onchange="slideChange('the-new-york-times', 0, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#bbcoptions">BBC</h2></a>
-			<div id="bbcoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('bbc-news', 1, 'bbcSlider')" type="checkbox" data-toggle="toggle" id="bbcswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="bbcCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="bbcSliderVal"></span></span><br>
-							<input id="bbcSlider" onchange="slideChange('bbc-news', 1, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#fortuneoptions">Fortune</h2></a>
-			<div id="fortuneoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('fortune', 2, 'fortuneSlider')" type="checkbox" data-toggle="toggle" id="fortuneswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="fortuneCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="fortuneSliderVal"></span></span><br>
-							<input id="fortuneSlider" onchange="slideChange('fortune', 2, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#timeoptions">Time</h2></a>
-			<div id="timeoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('time', 3, 'timeSlider')" type="checkbox" data-toggle="toggle" id="timeswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="timeCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="timeSliderVal"></span></span><br>
-							<input id="timeSlider" onchange="slideChange('time', 3, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#wsjoptions">Wall Street Journal</h2></a>
-			<div id="wsjoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('the-wall-street-journal', 4, 'wsjSlider')" type="checkbox" data-toggle="toggle" id="wsjswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="wsjCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="wsjSliderVal"></span></span><br>
-							<input id="wsjSlider" onchange="slideChange('the-wall-street-journal', 4, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#nfloptions">NFL</h2></a>
-			<div id="nfloptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('nfl-news', 5, 'nflSlider')" type="checkbox" data-toggle="toggle" id="nflswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="nflCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nflSliderVal"></span></span><br>
-							<input id="nflSlider" onchange="slideChange('nfl-news', 5, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#mtvoptions">MTV</h2></a>
-			<div id="mtvoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('mtv-news', 6, 'mtvSlider')" type="checkbox" data-toggle="toggle" id="mtvswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="mtvCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="mtvSliderVal"></span></span><br>
-							<input id="mtvSlider" onchange="slideChange('mtv-news', 6, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a><h2 data-toggle="collapse" data-target="#cnnoptions">CNN</h2></a>
-			<div id="cnnoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('cnn', 7, 'cnnSlider')" type="checkbox" data-toggle="toggle" id="cnnswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="cnnCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="cnnSliderVal"></span></span><br>
-							<input id="cnnSlider" onchange="slideChange('cnn', 7, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr />
-		</div>
-		<div id="main" class="container list-group">
-		</div>
-	</div>
-
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script type="text/javascript" src="ui2.js"></script>
 </body>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- MOMENT CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-<script type="text/javascript" src="ui2.js"></script>
-
-</body>
-
 </html>
