@@ -54,7 +54,7 @@ for (let i = 0; i < newsObj.length; i++) { //text inputs to Sliders for each new
   $('#' + newsObj[i].id + 'Slider').slider();
   $('#' + newsObj[i].id + 'Slider').on('slide', function(slideEvt) {
     $('#' + newsObj[i].id + 'SliderVal').text(slideEvt.value);
-    num = slideEvt.value; //Does num need to be defined?****** seems like no.
+    num = slideEvt.value;
   });
 
   $('#' + newsObj[i].id + 'SliderVal').text($('#' + newsObj[i].id + 'CurrentSliderValLabel').attr('data-slider-value'));
@@ -81,6 +81,9 @@ let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider 
     return false;
   }
 };
+
+let artColor;
+let wordColor;
 
 let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider val
   let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
