@@ -174,7 +174,6 @@ $('.ColorBlotch').on('click', function (event) {
 
 });
 
-
 };
 
 // Weather
