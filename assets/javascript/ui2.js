@@ -1,6 +1,3 @@
-let artColor; //article background color
-let wordColor; //article text color
-
 for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for each newsObj
   $('#mySidenav').append(
     '<a><h2 data-toggle="collapse" data-target="#' + newsObj[i].id + 'options">' +
