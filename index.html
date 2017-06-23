@@ -12,47 +12,49 @@
   <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
   <div class="logo">
-    <img class="img-rounded" src="theLatest.png" alt="the latest logo">
-    <p>The Latest</p>
+    <img class="img-rounded" src="assets/images/theLatest.png" alt="the latest logo">
+    <p>The Latest</p><!-- BOTTOM RIGHT CORNER FIXED -->
   </div>
-  <div id="pageTop" class="container-fluid">
+  <div id="pageTop" class="container-fluid"> <!-- HEADER TAGS -->
     <div class="row">
       <div class="col-lg-4"></div>
-      <div class="col-lg-4">
+      <div class="col-lg-4"><!-- SITE NAME/BUTTON TO OPEN LEFT COLUMN NAV -->
         <a href="#" data-toggle="tooltip" data-placement="left" title="Click Me" id="header"><h1>The Latest</h1></a>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4"> <!-- ELEMENTS FOR WEATHER INFO -->
         <div class="well" id="weatherWell"><a href="#" class="btn btn-info" role="button" id="weatherbtn" onclick="getWeather();">Get Local Weather</a></div>
       </div>
     </div>
   </div>
-  <div id="wrapper">
-    <div id="mySidenav" class="sidenav">
+  <div id="wrapper"> <!-- PAGE CONTENT -->
+    <div id="mySidenav" class="sidenav"> <!-- NEWS BUTTONS/OPTIONS -->
       <div id="MyColorSelector2" style="margin: 20px auto;">Word Color:<br></div>
       <div id="MyColorSelector" style="margin: 20px auto;">Article Color:<br></div>
     </div>
-    <div id="main" class="container list-group">
+    <div id="main" class="container list-group"> <!-- NEWS APPENDS HERE -->
     </div>
   </div>
 
-  <!-- jQuery library **repetitive jquery libraries?** -->
+  <!-- jQuery library **all needed?** -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- MOMENT CDN **needed?** -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
   <!-- Latest Sortable -->
   <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+  <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-  <script src="cpick/cpick.js"></script>
-  <script src="nwobj.js"></script>
-  <script src="ui2.js"></script>
+  <!-- COLOR PICKING -->
+  <script src="assets/javascript/cpick.js"></script>
+  <!-- NEWS SOURCE OBJECT -->
+  <script src="assets/javascript/nwobj.js"></script>
+  <!-- CUSTOM PAGE SCRIPT -->
+  <script src="assets/javascript/ui2.js"></script>
 </body>
 </html>

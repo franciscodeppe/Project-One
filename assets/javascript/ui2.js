@@ -131,7 +131,7 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
       let content = $('<div class="articleContent">');
 
       content.html(
-        '<p><a href="' + snapshot.articles[i].url + '">' +
+        '<p class="artLink"><a href="' + snapshot.articles[i].url + '">' +
         snapshot.articles[i].title + '</a></p>' +
         '<p>' + snapshot.articles[i].description + '</p>'
       );
@@ -149,6 +149,9 @@ let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider va
     if (wordColor !== undefined) {
       $('.list-group-item.active').css('color', wordColor);
       $('.list-group-item').css('color', wordColor);
+      $('.artLink a').css('color', wordColor);
+
+
     }
 
   }).fail(function(err) {
@@ -169,6 +172,7 @@ $('.ColorBlotch').on('click', function (event) {
     wordColor = newColor;
     $('.list-group-item.active').css('color', wordColor);
     $('.list-group-item').css('color', wordColor);
+    $('.artLink a').css('color', wordColor);
 
   }
 

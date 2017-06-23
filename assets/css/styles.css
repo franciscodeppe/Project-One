@@ -1,7 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
   width: 100vw;
-  background-image: url(background.jpg);
+  background-image: url(../images/background.jpg);
   background-repeat: repeat;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -94,6 +94,9 @@ body h2 {
   cursor: pointer;
 }
 
+.mySidenav h2 {
+  font-family: 18px;
+}
 /*Dropdown*/
 
 
@@ -154,7 +157,7 @@ body h2 {
   height: 100%;
   width: 100%;
 }
-.newsContent a {
+.artLink a {
   color: #000000;
   text-decoration: underline;
 }
@@ -186,6 +189,12 @@ body h2 {
 }
 .newsTitle a:hover {
   cursor: grab;
+}
+
+/* Color Picker */
+.ColorBlotch:hover {
+  cursor: pointer;
+  cursor: hand;
 }
 
 /* individual news source styles*/

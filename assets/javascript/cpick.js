@@ -80,7 +80,7 @@ jQuery.fn.braindeadColorSelector = function( props ) {
 				s.click( function() { props.clickCallback($(this).css('background-color')); });
 			}
 		} else {
-			s.text('?');
+			s.text('=>');
 			if( props.clickCallback ) {
 				s.click( function() { props.clickCallback(null); });
 			}
