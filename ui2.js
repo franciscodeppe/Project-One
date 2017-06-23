@@ -174,13 +174,12 @@ $('.ColorBlotch').on('click', function (event) {
 
 });
 
-<<<<<<< HEAD
-=======
+
 };
 
 // Weather
 
->>>>>>> 8b798e615309f66e3ca9319fae11b52cb385d825
+
 let getWeather = function (x) {
   $('#weatherbtn').hide();
   let weatherAPI = "480a2056976635fd";
@@ -194,11 +193,9 @@ let getWeather = function (x) {
     newRow.addClass('row');
     newRow.append('<div class="col-md-8 weatherinfo">' +
       '<p class="info"> City: ' + snapshot.current_observation.display_location.city + '</p>' +
-<<<<<<< HEAD
+
       '<p class="info"> Actual: ' + snapshot.current_observation.temperature_string + '</p>' +
-=======
-      '<p class="info"> Feels like: ' + snapshot.current_observation.temperature_string + '</p>' +
->>>>>>> 8b798e615309f66e3ca9319fae11b52cb385d825
+
       '<p class="info"> Feels like: ' + snapshot.current_observation.feelslike_string + '</p>' +
       '<p class="info"> Weather: ' + snapshot.current_observation.weather + '</p>' + '</div>' +
       '<div class="col-md- weatherIcon">' + '<img src="' + snapshot.current_observation.icon_url + '" alt="weatherIcon"></div>');
