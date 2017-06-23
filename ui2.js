@@ -88,7 +88,7 @@ let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider 
 let printNews = function (x, y, z) {//x=URL string, y=index value , z =slider val
   let newsAPI = '469cf0be81ab487c8d6f31374930c8bd';
   let queryURL;
-  if (x === 'wirtschafts-woche') {
+  if (x === 'wirtschafts-woche') { //won't sort by top
     queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=latest&apiKey=' + newsAPI;
   } else {
     queryURL = 'https://newsapi.org/v1/articles?source=' + x + '&sortBy=top&apiKey=' + newsAPI;
