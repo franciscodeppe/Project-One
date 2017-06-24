@@ -7,8 +7,7 @@ for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for
     '<div class="row">' +
     '<div class="container switch">' +
     '<p class="dropdown-text">Show:</p>' +
-    '<input onchange="togFn(\'' +
-    newsObj[i].link + '\', ' + i + ', ' + newsObj[i].id + 'Slider)" type="checkbox" ' +
+    '<input onchange="togFn(\'' + newsObj[i].link + '\', ' + i + ', ' + newsObj[i].id + 'Slider)" type="checkbox" ' +
     'data-toggle="toggle" id="' + newsObj[i].id + 'switch">' +
     '</div></div>' +
     '<div class="row">' +
@@ -43,9 +42,10 @@ database.ref().on("child_added", function(childSnapshot) {
   newsObj[childSnapshot.val().index].state = childSnapshot.val().state;
   newsObj[childSnapshot.val().index].fbKey = childSnapshot.key;
 
-  if (newsObj[childSnapshot.val().index].state === true) {
-    $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle('on');
-  }
+  // if (newsObj[childSnapshot.val().index].state === true) {
+  //   $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle('on');
+  //   console.log('done');
+  // }
   if (newsObj[childSnapshot.val().index].state === true) {
     printNews(newsObj[childSnapshot.val().index].link, childSnapshot.val().index, newsObj[childSnapshot.val().index].slider);
   }
@@ -230,4 +230,4 @@ let getWeather = function (x) {
       '" alt="weatherIcon"></span>');
       $('#weatherWell').append(newRow);
   });
-}
+};
