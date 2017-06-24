@@ -44,7 +44,7 @@ database.ref().on("child_added", function(childSnapshot) {
   newsObj[childSnapshot.val().index].fbKey = childSnapshot.key;
 
   if (newsObj[childSnapshot.val().index].state === true) {
-    $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle();
+    $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle('on');
   }
   if (newsObj[childSnapshot.val().index].state === true) {
     printNews(newsObj[childSnapshot.val().index].link, childSnapshot.val().index, newsObj[childSnapshot.val().index].slider);
