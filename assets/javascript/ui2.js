@@ -42,10 +42,6 @@ database.ref().on("child_added", function(childSnapshot) {
   newsObj[childSnapshot.val().index].state = childSnapshot.val().state;
   newsObj[childSnapshot.val().index].fbKey = childSnapshot.key;
 
-  // if (newsObj[childSnapshot.val().index].state === true) {
-  //   $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle('on');
-  //   console.log('done');
-  // }
   if (newsObj[childSnapshot.val().index].state === true) {
     printNews(newsObj[childSnapshot.val().index].link, childSnapshot.val().index, newsObj[childSnapshot.val().index].slider);
   }
@@ -214,7 +210,7 @@ let getWeather = function (x) {
   $('#weatherWell').css('padding', '3px 5%');
   $('#weatherWell').css('text-align', 'left');
   let weatherAPI = "480a2056976635fd";
-  let queryURL = "http://api.wunderground.com/api/"+ weatherAPI + "/conditions/settings/q/autoip.json";
+  let queryURL = "https://api.wunderground.com/api/"+ weatherAPI + "/conditions/settings/q/autoip.json";
   $.ajax({
     url: queryURL,
     method: 'GET'
