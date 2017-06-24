@@ -25,6 +25,34 @@ for (let i = 0; i < newsObj.length; i++) { //Generate news toggle and slider for
   );
 }
 
+let config = {
+  apiKey: "AIzaSyBo3E-IW6xVpihfnK-aKEdWy_YyaZ24ixI",
+  authDomain: "slider-6b4c7.firebaseapp.com",
+  databaseURL: "https://slider-6b4c7.firebaseio.com",
+  projectId: "slider-6b4c7",
+  storageBucket: "",
+  messagingSenderId: "686583997545"
+};
+firebase.initializeApp(config);
+
+let database = firebase.database();
+
+database.ref().on("child_added", function(childSnapshot) {
+  snapshot = childSnapshot;
+  newsObj[childSnapshot.val().index].slider = childSnapshot.val().slider;
+  newsObj[childSnapshot.val().index].state = childSnapshot.val().state;
+  newsObj[childSnapshot.val().index].fbKey = childSnapshot.key;
+
+  if (newsObj[childSnapshot.val().index].state === true) {
+    $('#' + newsObj[childSnapshot.val().index].id + 'switch').bootstrapToggle();
+  }
+  if (newsObj[childSnapshot.val().index].state === true) {
+    printNews(newsObj[childSnapshot.val().index].link, childSnapshot.val().index, newsObj[childSnapshot.val().index].slider);
+  }
+}, function(errorObject) {
+  console.log("Errors handled: " + errorObject.code);
+});
+
 let open = false; //state of menu
 $('#header').on('click', function() { //toggle state of menu
   if (open === false) {
@@ -66,9 +94,11 @@ for (let i = 0; i < newsObj.length; i++) { //text inputs to Sliders for each new
 let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
   if (newsObj[y].state === false) {
     newsObj[y].state = true;
+    firebase.database().ref().child(newsObj[y].fbKey).update({state: true});
     printNews(x, y, z.value);
   } else {
     newsObj[y].state = false;
+    firebase.database().ref().child(newsObj[y].fbKey).update({state: false});
     $('#newsDiv' + y).remove();
   }
 };
@@ -76,6 +106,7 @@ let togFn = function (x, y, z) { //x= url string, y=index value, z=slider id
 let slideChange = function (x, y, z) { //x=url string, y=index value, z= slider value
   if (newsObj[y].state === true) {
     newsObj[y].slider = z;
+    firebase.database().ref().child(newsObj[y].fbKey).update({slider: z});
     printNews(x, y, z);
   } else {
     return false;
