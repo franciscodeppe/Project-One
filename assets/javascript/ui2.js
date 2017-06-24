@@ -179,7 +179,9 @@ $('.ColorBlotch').on('click', function (event) {
 });
 
 let getWeather = function (x) {
-  $('#weatherbtn').hide();
+  $('#weatherbtn').remove();
+  $('#weatherWell').css('padding', '3px 5%');
+  $('#weatherWell').css('text-align', 'left');
   let weatherAPI = "480a2056976635fd";
   let queryURL = "http://api.wunderground.com/api/"+ weatherAPI + "/conditions/settings/q/autoip.json";
   $.ajax({
@@ -187,14 +189,13 @@ let getWeather = function (x) {
     method: 'GET'
   }).done(function (snapshot){
     console.log(snapshot);
-    var newRow = $('<div>');
-    newRow.addClass('row');
-    newRow.append('<div class="col-md-8 weatherinfo">' +
-      '<p class="info"> City: ' + snapshot.current_observation.display_location.city + '</p>' +
-      '<p class="info"> Actual: ' + snapshot.current_observation.temperature_string + '</p>' +
-      '<p class="info"> Feels like: ' + snapshot.current_observation.feelslike_string + '</p>' +
-      '<p class="info"> Weather: ' + snapshot.current_observation.weather + '</p>' + '</div>' +
-      '<div class="col-md- weatherIcon">' + '<img src="' + snapshot.current_observation.icon_url + '" alt="weatherIcon"></div>');
+    var newRow = $('<span>');
+    newRow.append('<span class="weatherInfo">' +
+      '<span class="info"> City: ' + snapshot.current_observation.display_location.city + '</span><br>' +
+      '<span class="info"> Actual: ' + snapshot.current_observation.temperature_string + '</span><br>' +
+      '<span class="info"> Feels like: ' + snapshot.current_observation.feelslike_string + '</span><br>' +
+      '<span class="info"> Weather: ' + snapshot.current_observation.weather + '</span>' + '</span>' +
+      '<span class="weatherIcon">' + '<img src="' + snapshot.current_observation.icon_url + '" alt="weatherIcon"></span>');
       $('#weatherWell').append(newRow);
   });
 }
