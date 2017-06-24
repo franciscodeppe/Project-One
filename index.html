@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
       <div class="col-xs-4"></div>
       <div class="col-xs-4"><!-- SITE NAME/BUTTON TO OPEN LEFT COLUMN NAV -->
         <a href="#" data-toggle="tooltip" data-placement="left" title="Click Me" id="header">
-          <h1>The Latest</h1>
+          <h1 data-hint="Click the title to get started!">The Latest</h1>
         </a>
       </div>
       <div class="col-xs-4 well" id="weatherWell"> <!-- ELEMENTS FOR WEATHER INFO -->
@@ -39,7 +40,7 @@
       <div id="MyColorSelector2" style="margin: 20px auto;">Word Color:<br></div>
       <div id="MyColorSelector" style="margin: 20px auto;">Article Color:<br></div>
     </div>
-    <div id="main" class="container list-group"> <!-- NEWS APPENDS HERE -->
+    <div id="main" class="container list-group" data-hint="Drag and drop any of the boxes to change the order." data-hintPosition="top-right"> <!-- NEWS APPENDS HERE -->
     </div>
   </div>
 
@@ -53,6 +54,8 @@
   <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
   <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<!-- intro.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/intro.min.js"></script>
   <!-- COLOR PICKING -->
   <script src="assets/javascript/cpick.js"></script>
   <!-- NEWS SOURCE OBJECT -->

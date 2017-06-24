@@ -226,4 +226,12 @@ let getWeather = function (x) {
       '" alt="weatherIcon"></span>');
       $('#weatherWell').append(newRow);
   });
-};
+
+}
+
+//Intro.Js
+$('#mySidenav h2:first').attr("data-hint", "Click the name of the news you'd like to see");
+$('#mySidenav h2:first').attr("data-hintPosition", "bottom-middle");
+$('.sliders p:first').attr("data-hint", "Set how many headlines you'd like to view.");
+$('.sliders p:first').attr("data-hintPosition", "bottom-left");
+introJs().addHints();
