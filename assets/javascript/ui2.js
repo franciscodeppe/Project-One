@@ -195,7 +195,8 @@ let getWeather = function (x) {
       '<span class="info"> Actual: ' + snapshot.current_observation.temperature_string + '</span><br>' +
       '<span class="info"> Feels like: ' + snapshot.current_observation.feelslike_string + '</span><br>' +
       '<span class="info"> Weather: ' + snapshot.current_observation.weather + '</span>' + '</span>' +
-      '<span class="weatherIcon">' + '<img src="' + snapshot.current_observation.icon_url + '" alt="weatherIcon"></span>');
+      '<span class="weatherIcon">' + '<img src="' + snapshot.current_observation.icon_url +
+      '" alt="weatherIcon"></span>');
       $('#weatherWell').append(newRow);
   });
 }
