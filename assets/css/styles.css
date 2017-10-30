@@ -1,0 +1,242 @@
+body {
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+  background-image: url(../images/background.jpg);
+  background-repeat: repeat;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body h1 {
+  font-family: 'Lily Script One', cursive;
+  color: #000000;
+}
+body h2 {
+  margin: 0;
+}
+#wrapper {
+  position: absolute;
+  top: 85px;
+  width: 100%;
+}
+.row {
+  margin: 0;
+}
+
+/*Logo*/
+
+.logo {
+  z-index: 0;
+  -webkit-filter: grayscale(100%);
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  font-family: 'Lily Script One', cursive;
+  font-size: 30px;
+  text-align: center;
+  color: #000000;
+}
+.logo img {
+  width: 150px;
+  height: 160px;
+}
+
+/*Page heading -->top*/
+
+#header {
+  text-decoration: none;
+  text-align: center;
+}
+#pageTop {
+  position: relative;
+  background-color: #FFFFFF;
+  height: 90px;
+  box-sizing: border-box;
+  border-bottom: 10px solid #000000;
+}
+
+/*Sidebar*/
+
+.sidenav {
+  padding-left: 1%;
+  height: 100vh;
+  min-height: 100%;
+  width: 0;
+  z-index: 1;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 15px;
+  position: absolute;
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  border-right: 5px solid #000000;
+  box-sizing: border-box;
+}
+
+.sidenav a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+  margin-bottom: 15px;
+  /*margin-right: 10px;*/
+}
+
+.sidenav a:hover {
+  cursor: pointer;
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+  color: gray;
+}
+
+.slider:hover {
+  cursor: pointer;
+}
+
+.mySidenav h2 {
+  font-family: 18px;
+}
+/*Dropdown*/
+
+
+.dropdown-text {
+  color: black;
+  margin-right: 15px;
+  display: -webkit-inline-box;
+  font-size: 20px;
+  text-align: center;
+}
+
+.switch {
+  padding-top: 10px;
+}
+
+/*Main*/
+
+#main {
+  transition: margin-left 500ms;
+  padding: 0;
+  float: left;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsDiv {
+  width: 100%;
+  height: 400px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding-top: 8px;
+  margin: 25px 3%;
+  overflow: hidden;
+  border: 1px solid black;
+  max-width: 350px;
+  min-width: 260px;
+}
+
+.newsDiv p:first-of-type {
+  width: 80%;
+  padding-top: 10px;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+}
+.newsDiv p:nth-of-type(2) {
+  padding-top: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.newsContent, .list-group-item {
+  border: none !important;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.artLink a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.carousel-inner {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.carousel-inner .newsContent .img-responsive { /* Article Image Style */
+  max-width: 250px;
+  max-height: 175px;
+  margin: 0 auto;
+}
+
+.carousel-control {
+  z-index: 1;
+  background-image: none !important;
+
+}
+.carousel-control .glyphicon {
+  color: #000000;
+}
+.newsTitle {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+.newsTitle a:hover {
+  cursor: grab;
+}
+
+/* Color Picker */
+.ColorBlotch:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* individual news source styles*/
+#newsDiv62 p { /* Times of India has too many words!*/
+  font-size: 11px;
+}
+#newsDiv3 p { /*wow, associated press shoves the entire article on there*/
+  font-size: 9px;
+}
+
+/*Weather*/
+
+#weatherbtn {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  width: 30%;
+  font-family: 'Lily+Script+One', cursive;
+  font-weight: 500;
+}
+
+#weatherWell {
+  box-sizing: border-box;
+  font-size: 12px;
+  max-height: 75px;
+  margin: 3px 0;
+  text-align: center;
+}
+
+.info {
+  font-family: 'Lily+Script+One', cursive;
+  margin-top: -5px;
+
+}
+.weatherinfo {
+  float: left;
+  text-align: left !important;
+  width: 30%;
+}
+.weatherIcon {
+  float: right;
+  width: 30%;
+  margin-top: -45px;
+}

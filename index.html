@@ -1,104 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
-	<link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Latest - News Resource</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/css/bootstrap-slider.css">
+  <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
-	<div class="img-holder">
-		<img class="img-rounded logo" src="theLatest.png" alt="">
-	</div>
-	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header"></div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<p style="font-family: 'Special Elite', cursive;">Click</p><a href="#" id="header"><h1 class="nav navbar-nav">The Latest</h1></a><p style="font-family: 'Special Elite', cursive;">  to open and close your options</p>
 
-			</div>
-		</div>
-	</nav>
-	<div id="wrapper">
-		<div id="mySidenav" class="sidenav">
-			<a><h2 data-toggle="collapse" data-target="#nytoptions">New York Times</h2></a>
-			<div id="nytoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input onchange="togFn('the-new-york-times', 0, 'nytSlider')" type="checkbox" data-toggle="toggle" id="nytswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="nytCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small><span id="nytSliderVal"></span></span><br>
-							<input id="nytSlider" onchange="slideChange('the-new-york-times', 0, this.value)" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a><h2 data-toggle="collapse" data-target="#bfoptions">Buzzfeed</h2></a>
-			<div id="bfoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input type="checkbox" data-toggle="toggle" id="buzzswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="bfCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="bfSliderVal"></span></span><br>
-							<input id="bfSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a><h2 data-toggle="collapse" data-target="#twoptions">Twitter</h2></a>
-			<div id="twoptions" class="collapse">
-				<div class="container">
-					<div class="row">
-						<div class="container switch">
-							<p class="dropdown-text">Show me this:</p>
-							<input type="checkbox" data-toggle="toggle" id="twitterswitch">
-						</div>
-					</div>
-					<div class="row">
-						<div class="container number">
-							<span class="sliders" id="twCurrentSliderValLabel"><p class="dropdown-text">Feed Size</p> <small></small></p><span id="twSliderVal"></span></span><br>
-							<input id="twSlider" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="5" /><br>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="main" class="container">
-		</div>
-	</div>
+  <div class="logo">
+    <img class="img-rounded" src="assets/images/theLatest.png" alt="the latest logo">
+    <p>The Latest</p><!-- BOTTOM RIGHT CORNER FIXED -->
+  </div>
+  <div id="pageTop" class="container-fluid"> <!-- HEADER TAGS -->
+    <div class="row">
+      <div class="col-xs-4"></div>
+      <div class="col-xs-4"><!-- SITE NAME/BUTTON TO OPEN LEFT COLUMN NAV -->
+        <a href="#" data-toggle="tooltip" data-placement="left" title="Click Me" id="header">
+          <h1 data-hint="Click the title to get started!">The Latest</h1>
+        </a>
+      </div>
+      <div class="col-xs-4 well" id="weatherWell"> <!-- ELEMENTS FOR WEATHER INFO -->
+          <a href="#" class="btn btn-info text-left" role="button" id="weatherbtn" onclick="getWeather();">
+            Get Local Weather</a>
+      </div>
+    </div>
+  </div>
+  <div id="wrapper"> <!-- PAGE CONTENT -->
+    <div id="mySidenav" class="sidenav"> <!-- NEWS BUTTONS/OPTIONS -->
+      <div id="MyColorSelector2" style="margin: 20px auto;">Word Color:<br></div>
+      <div id="MyColorSelector" style="margin: 20px auto;">Article Color:<br></div>
+    </div>
+    <div id="main" class="container list-group" data-hint="Drag and drop any of the boxes to change the order." data-hintPosition="top-right"> <!-- NEWS APPENDS HERE -->
+    </div>
+  </div>
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<!-- intro.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/intro.min.js"></script>
+  <!-- COLOR PICKING -->
+  <script src="assets/javascript/cpick.js"></script>
+  <!-- NEWS SOURCE OBJECT -->
+  <script src="assets/javascript/nwobj.js"></script>
+  <!-- FIREBASE SCRIPT -->
+  <script src="assets/javascript/javascript.js"></script>
+  <!-- CUSTOM PAGE SCRIPT -->
+  <script src="assets/javascript/ui2.js"></script>
 </body>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- MOMENT CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-<script type="text/javascript" src="ui2.js"></script>
-<script src="script.js"></script>
-</body>
-
 </html>
